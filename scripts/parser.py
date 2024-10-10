@@ -77,24 +77,37 @@ try:
             print(f"Ошибка преобразования даты и времени: {ve}")
             continue
 
-        # Вставка данных в таблицу games
-        insert_query = sql.SQL("""
-            INSERT INTO games (date_time, home_team_id, away_team_id, home_score, away_score, winner_id)
-            VALUES (
-                %s,
-                (SELECT id FROM teams WHERE name = %s),
-                (SELECT id FROM teams WHERE name = %s),
-                %s,
-                %s,
-                (SELECT id FROM teams WHERE name = %s)
-            )
+        # Проверка на существование записи
+        check_query = sql.SQL("""
+            SELECT 1 FROM games 
+            WHERE date_time = %s 
+            AND home_team_id = (SELECT id FROM teams WHERE name = %s) 
+            AND away_team_id = (SELECT id FROM teams WHERE name = %s) 
+            AND home_score = %s 
+            AND away_score = %s
         """)
 
-        # Выполнение вставки
-        try:
-            cursor.execute(insert_query, (match_datetime, home_team, away_team, home_score, away_score, winner))
-        except Exception as e:
-            print(f"Ошибка при вставке данных: {e}")
+        cursor.execute(check_query, (match_datetime, home_team, away_team, home_score, away_score))
+        exists = cursor.fetchone()
+
+        # Вставка данных в таблицу games, если запись не существует
+        if not exists:  # Если запись не существует
+            insert_query = sql.SQL("""
+                INSERT INTO games (date_time, home_team_id, away_team_id, home_score, away_score, winner_id)
+                VALUES (
+                    %s,
+                    (SELECT id FROM teams WHERE name = %s),
+                    (SELECT id FROM teams WHERE name = %s),
+                    %s,
+                    %s,
+                    (SELECT id FROM teams WHERE name = %s)
+                )
+            """)
+
+            try:
+                cursor.execute(insert_query, (match_datetime, home_team, away_team, home_score, away_score, winner))
+            except Exception as e:
+                print(f"Ошибка при вставке данных: {e}")
 
     # Подтверждение транзакции
     conn.commit()

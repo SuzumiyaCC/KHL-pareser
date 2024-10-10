@@ -31,7 +31,6 @@ driver.implicitly_wait(10)
 teams = driver.find_elements("css selector", "div.tableCellParticipant")
 
 # Подключение к базе данных PostgreSQL
-# Измените хост на имя сервиса Docker
 conn = psycopg2.connect(
     dbname='KHL',
     user='khl_user',
@@ -44,9 +43,9 @@ cur = conn.cursor()
 
 # Вставка команд в таблицу
 for team in teams:
-    team_name = team.find_element("css selector", "a.tableCellParticipant__name").text
+    team_name = team.find_element("css selector", "a.tableCellParticipant__name").text.strip()
 
-    # Выполнение SQL-запроса для вставки команды
+    # Выполнение SQL-запроса для вставки команды с проверкой на дубликаты
     cur.execute("INSERT INTO teams (name) VALUES (%s) ON CONFLICT (name) DO NOTHING;", (team_name,))
     print(f"Команда: {team_name} добавлена в базу данных.")
 
