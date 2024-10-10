@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
 from webdriver_manager.chrome import ChromeDriverManager
 import psycopg2
 from psycopg2 import sql
@@ -26,6 +26,15 @@ url = 'https://www.flashscorekz.com/hockey/russia/khl/results/'
 driver.get(url)
 driver.implicitly_wait(10)
 
+# Закрываем баннер cookie, если он есть
+try:
+    cookie_banner = driver.find_element("css selector", "#onetrust-accept-btn-handler")
+    cookie_banner.click()
+    print("Cookie баннер закрыт.")
+    time.sleep(2)  # Небольшая задержка для обработки закрытия баннера
+except NoSuchElementException:
+    print("Cookie баннер не найден, продолжаем.")
+
 # Нажимаем кнопку "Показать больше матчей" до тех пор, пока она доступна
 while True:
     try:
@@ -35,6 +44,9 @@ while True:
     except NoSuchElementException:
         print("Все матчи загружены.")
         break
+    except ElementClickInterceptedException:
+        print("Элемент не кликабелен, попытка снова.")
+        time.sleep(2)
 
 # Подключение к PostgreSQL
 try:
