@@ -1,14 +1,16 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager
 import psycopg2
 from psycopg2 import sql
 from datetime import datetime
+import time
 
 # Настройки для работы с браузером
 options = Options()
-options.add_argument("--headless")
+options.add_argument("--headless")  # Запуск в headless-режиме
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--disable-gpu")
@@ -23,6 +25,16 @@ driver = webdriver.Chrome(service=service, options=options)
 url = 'https://www.flashscorekz.com/hockey/russia/khl/results/'
 driver.get(url)
 driver.implicitly_wait(10)
+
+# Нажимаем кнопку "Показать больше матчей" до тех пор, пока она доступна
+while True:
+    try:
+        load_more_button = driver.find_element("css selector", "a.event__more")
+        load_more_button.click()
+        time.sleep(2)  # Ожидание после клика
+    except NoSuchElementException:
+        print("Все матчи загружены.")
+        break
 
 # Подключение к PostgreSQL
 try:
@@ -91,7 +103,7 @@ try:
         exists = cursor.fetchone()
 
         # Вставка данных в таблицу games, если запись не существует
-        if not exists:  # Если запись не существует
+        if not exists:
             insert_query = sql.SQL("""
                 INSERT INTO games (date_time, home_team_id, away_team_id, home_score, away_score, winner_id)
                 VALUES (
