@@ -39,9 +39,34 @@ GRANT ALL PRIVILEGES ON TABLE games TO khl_user;
 GRANT ALL PRIVILEGES ON SEQUENCE games_id_seq TO khl_user;
 
 -- Создание таблицы результатов
-CREATE TABLE results (
+CREATE TABLE team_stats (
     id SERIAL PRIMARY KEY,
-    game_id INT REFERENCES games(id),
-    home_team_score INT NOT NULL,
-    away_team_score INT NOT NULL
+    team_name VARCHAR(100),
+    games_played INT,
+    wins_in_regular INT,
+    wins_in_overtime INT,
+    wins_in_shootout INT,
+    losses_in_shootout INT,
+    losses_in_overtime INT,
+    losses_regular INT,
+    points INT,
+    games_without_goals INT,
+    games_without_conceding INT,
+    goals_scored INT,
+    goals_conceded INT,
+    penalty_time INT,
+    opponent_penalty_time INT,
+    puck_recoveries INT,
+    pass_interceptions INT,
+    puck_losses INT,
+    equal_strength_time VARCHAR(10),
+    avg_equal_strength_time VARCHAR(10),
+    empty_net_time VARCHAR(10),
+    avg_empty_net_time VARCHAR(10),
+    date_updated DATE
 );
+
+-- Предоставляем права на таблицу пользователю khl_user
+GRANT ALL PRIVILEGES ON TABLE team_stats TO khl_user;
+-- Предоставляем права на последовательность
+GRANT ALL PRIVILEGES ON SEQUENCE team_stats_id_seq TO khl_user;
