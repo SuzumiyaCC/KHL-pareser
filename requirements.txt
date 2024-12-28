@@ -2,3 +2,4 @@ selenium
 psycopg2-binary
 webdriver-manager
 bs4
+Flask

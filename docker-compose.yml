@@ -22,5 +22,18 @@ services:
     depends_on:
       - db
 
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"  # Порт 5000 на хосте, 5000 в контейнере
+    volumes:
+      - .:/app  # Монтируем текущую директорию в /app
+    environment:
+      FLASK_ENV: development
+    depends_on:
+      - db
+
 volumes:
   db_data:

@@ -17,12 +17,16 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Копируем скрипты в контейнер
+# Копируем скрипты и Flask-приложение в контейнер
 COPY scripts /app/scripts
-WORKDIR /app/scripts
+COPY app.py /app/
+COPY templates /app/templates
 
+# Устанавливаем рабочую директорию
+WORKDIR /app
+
+# Настройка cron для запуска парсера
 RUN echo "0 3 * * * python3.12 /app/scripts/parser.py >> /var/log/cron.log 2>&1" >> /etc/crontab
 
-# Запускаем скрипт
-CMD ["sleep", "infinity"]
-
+# Запуск cron и Flask-приложения
+CMD cron && flask run --host=0.0.0.0 --port=5000
