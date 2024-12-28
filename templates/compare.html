@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сравнение команд</title>
+    <!-- Подключаем Bootstrap 4 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Подключаем стили -->
+    <style>
+        .tab-content {
+            margin-top: 20px;
+        }
+        .match-table {
+            margin-top: 20px;
+        }
+        .chart-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Сравнение команд</h1>
+        <a href="/" class="btn btn-primary mb-4">Вернуться к списку матчей</a>
+
+        <!-- Форма выбора команд -->
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Выберите команды</h3>
+                <select id="team1" class="form-control mb-3">
+                    <option value="">Выберите команду 1</option>
+                    {% for team in teams %}
+                    <option value="{{ team }}">{{ team }}</option>
+                    {% endfor %}
+                </select>
+                <select id="team2" class="form-control mb-3">
+                    <option value="">Выберите команду 2</option>
+                    {% for team in teams %}
+                    <option value="{{ team }}">{{ team }}</option>
+                    {% endfor %}
+                </select>
+                <button id="compare-btn" class="btn btn-primary">Сравнить</button>
+            </div>
+        </div>
+
+        <!-- Результаты сравнения -->
+        <div id="compare-results" class="mt-4">
+            <h3>Результаты сравнения</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 id="team1-name"></h4>
+                    <p>Победы: <span id="team1-wins"></span></p>
+                    <p>Ничьи: <span id="team1-draws"></span></p>
+                    <p>Поражения: <span id="team1-losses"></span></p>
+                    <p>Среднее количество голов за матч: <span id="team1-avg-goals"></span></p>
+                    <p>Процент побед дома: <span id="team1-home-win-percentage"></span>%</p>
+                    <p>Процент побед на выезде: <span id="team1-away-win-percentage"></span>%</p>
+                    <canvas id="team1PieChart"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <h4 id="team2-name"></h4>
+                    <p>Победы: <span id="team2-wins"></span></p>
+                    <p>Ничьи: <span id="team2-draws"></span></p>
+                    <p>Поражения: <span id="team2-losses"></span></p>
+                    <p>Среднее количество голов за матч: <span id="team2-avg-goals"></span></p>
+                    <p>Процент побед дома: <span id="team2-home-win-percentage"></span>%</p>
+                    <p>Процент побед на выезде: <span id="team2-away-win-percentage"></span>%</p>
+                    <canvas id="team2PieChart"></canvas>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <h3>Статистика встреч между командами</h3>
+                    <p>Победы <span id="team1-name-head"></span>: <span id="team1-wins-head"></span></p>
+                    <p>Победы <span id="team2-name-head"></span>: <span id="team2-wins-head"></span></p>
+                    <p>Среднее количество голов в матчах: <span id="head-to-head-avg-goals"></span></p>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <h3>Последние матчи между командами</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Дата</th>
+                                <th>Соперник</th>
+                                <th>Счет</th>
+                                <th>Тип матча</th>
+                            </tr>
+                        </thead>
+                        <tbody id="head-to-head-matches">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Графики -->
+            <div class="row mt-4">
+                <div class="col-md-6 chart-container">
+                    <h3>Форма команды <span id="team1-name-form"></span></h3>
+                    <canvas id="team1LineChart"></canvas>
+                </div>
+                <div class="col-md-6 chart-container">
+                    <h3>Форма команды <span id="team2-name-form"></span></h3>
+                    <canvas id="team2LineChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключаем jQuery и Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Подключаем Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Наш JavaScript -->
+    <script>
+        $(document).ready(function() {
+            $('#compare-btn').click(function() {
+                const team1 = $('#team1').val();
+                const team2 = $('#team2').val();
+
+                if (!team1 || !team2) {
+                    alert('Выберите обе команды!');
+                    return;
+                }
+
+                // Запрос данных о матчах команд
+                $.get(`/compare?team1=${team1}&team2=${team2}`, function(data) {
+                    // Отображение статистики
+                    $('#team1-name').text(team1);
+                    $('#team1-wins').text(data.team1_stats.wins);
+                    $('#team1-draws').text(data.team1_stats.draws);
+                    $('#team1-losses').text(data.team1_stats.losses);
+                    $('#team1-avg-goals').text(data.team1_stats.avg_goals);
+                    $('#team1-home-win-percentage').text(data.team1_stats.home_win_percentage);
+                    $('#team1-away-win-percentage').text(data.team1_stats.away_win_percentage);
+
+                    $('#team2-name').text(team2);
+                    $('#team2-wins').text(data.team2_stats.wins);
+                    $('#team2-draws').text(data.team2_stats.draws);
+                    $('#team2-losses').text(data.team2_stats.losses);
+                    $('#team2-avg-goals').text(data.team2_stats.avg_goals);
+                    $('#team2-home-win-percentage').text(data.team2_stats.home_win_percentage);
+                    $('#team2-away-win-percentage').text(data.team2_stats.away_win_percentage);
+
+                    // Отображение статистики встреч между командами
+                    $('#team1-name-head').text(team1);
+                    $('#team1-wins-head').text(data.head_to_head_stats.team1_wins);
+                    $('#team2-name-head').text(team2);
+                    $('#team2-wins-head').text(data.head_to_head_stats.team2_wins);
+                    $('#head-to-head-avg-goals').text(data.head_to_head_stats.avg_goals);
+
+                    // Отображение матчей между командами
+                    $('#head-to-head-matches').html(
+                        data.head_to_head_matches.map(match => `
+                            <tr>
+                                <td>${match.date}</td>
+                                <td>${match.opponent}</td>
+                                <td>${match.score}</td>
+                                <td>${match.match_type}</td>
+                            </tr>
+                        `).join('')
+                    );
+
+                    // Круговые диаграммы
+                    new Chart(document.getElementById('team1PieChart'), {
+                        type: 'pie',
+                        data: {
+                            labels: ['Победы', 'Ничьи', 'Поражения'],
+                            datasets: [{
+                                data: [data.team1_stats.wins, data.team1_stats.draws, data.team1_stats.losses],
+                                backgroundColor: ['#36a2eb', '#ffcd56', '#ff6384']
+                            }]
+                        }
+                    });
+
+                    new Chart(document.getElementById('team2PieChart'), {
+                        type: 'pie',
+                        data: {
+                            labels: ['Победы', 'Ничьи', 'Поражения'],
+                            datasets: [{
+                                data: [data.team2_stats.wins, data.team2_stats.draws, data.team2_stats.losses],
+                                backgroundColor: ['#36a2eb', '#ffcd56', '#ff6384']
+                            }]
+                        }
+                    });
+
+                    // Линейные графики
+                    const team1Results = data.team1_matches.map(match => {
+                        const [homeScore, awayScore] = match.score.split(' : ').map(Number);
+                        if (match.opponent === team2) {
+                            if (homeScore > awayScore) return 1; // Победа
+                            if (homeScore === awayScore) return 0; // Ничья
+                            return -1; // Поражение
+                        } else {
+                            if (awayScore > homeScore) return 1; // Победа
+                            if (awayScore === homeScore) return 0; // Ничья
+                            return -1; // Поражение
+                        }
+                    });
+
+                    const team2Results = data.team2_matches.map(match => {
+                        const [homeScore, awayScore] = match.score.split(' : ').map(Number);
+                        if (match.opponent === team1) {
+                            if (homeScore > awayScore) return 1; // Победа
+                            if (homeScore === awayScore) return 0; // Ничья
+                            return -1; // Поражение
+                        } else {
+                            if (awayScore > homeScore) return 1; // Победа
+                            if (awayScore === homeScore) return 0; // Ничья
+                            return -1; // Поражение
+                        }
+                    });
+
+                    new Chart(document.getElementById('team1LineChart'), {
+                        type: 'line',
+                        data: {
+                            labels: data.team1_matches.map(match => match.date),
+                            datasets: [{
+                                label: 'Форма команды',
+                                data: team1Results,
+                                borderColor: '#36a2eb',
+                                fill: false
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    ticks: {
+                                        callback: function(value) {
+                                            if (value === 1) return 'Победа';
+                                            if (value === 0) return 'Ничья';
+                                            return 'Поражение';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+
+                    new Chart(document.getElementById('team2LineChart'), {
+                        type: 'line',
+                        data: {
+                            labels: data.team2_matches.map(match => match.date),
+                            datasets: [{
+                                label: 'Форма команды',
+                                data: team2Results,
+                                borderColor: '#ff6384',
+                                fill: false
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    ticks: {
+                                        callback: function(value) {
+                                            if (value === 1) return 'Победа';
+                                            if (value === 0) return 'Ничья';
+                                            return 'Поражение';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

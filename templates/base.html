@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Матчи КХЛ{% endblock %}</title>
+    <!-- Подключаем Bootstrap 4 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Подключаем стили -->
+    {% include 'includes/styles.html' %}
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Матчи КХЛ</h1>
+
+        <!-- Вкладки -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="matches-tab" data-toggle="tab" href="#matches" role="tab">Все матчи</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="compare-tab" data-toggle="tab" href="#compare" role="tab">Сравнение команд</a>
+            </li>
+        </ul>
+
+        <!-- Содержимое вкладок -->
+        <div class="tab-content" id="myTabContent">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <!-- Подключаем jQuery и Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Подключаем Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Подключаем скрипты -->
+    {% include 'includes/scripts.html' %}
+</body>
+</html>

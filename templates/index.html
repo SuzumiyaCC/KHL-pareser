@@ -6,11 +6,15 @@
     <title>Матчи КХЛ</title>
     <!-- Подключаем Bootstrap 4 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Подключаем стили -->
     <style>
         .tab-content {
             margin-top: 20px;
         }
         .match-table {
+            margin-top: 20px;
+        }
+        .chart-container {
             margin-top: 20px;
         }
     </style>
@@ -22,17 +26,17 @@
         <!-- Вкладки -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="matches-tab" data-toggle="tab" href="#matches" role="tab">Все матчи</a>
+                <a class="nav-link active" id="matches-tab" data-toggle="tab" href="#matches" role="tab" aria-controls="matches" aria-selected="true">Все матчи</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="compare-tab" data-toggle="tab" href="#compare" role="tab">Сравнение команд</a>
+                <a class="nav-link" id="compare-tab" data-toggle="tab" href="#compare" role="tab" aria-controls="compare" aria-selected="false">Сравнение команд</a>
             </li>
         </ul>
 
         <!-- Содержимое вкладок -->
         <div class="tab-content" id="myTabContent">
             <!-- Вкладка "Все матчи" -->
-            <div class="tab-pane fade show active" id="matches" role="tabpanel">
+            <div class="tab-pane fade show active" id="matches" role="tabpanel" aria-labelledby="matches-tab">
                 <table class="table table-striped match-table">
                     <thead>
                         <tr>
@@ -58,7 +62,7 @@
             </div>
 
             <!-- Вкладка "Сравнение команд" -->
-            <div class="tab-pane fade" id="compare" role="tabpanel">
+            <div class="tab-pane fade" id="compare" role="tabpanel" aria-labelledby="compare-tab">
                 <div class="row">
                     <div class="col-md-6">
                         <h3>Выберите команды</h3>
@@ -81,8 +85,65 @@
                 <!-- Результаты сравнения -->
                 <div id="compare-results" class="mt-4">
                     <h3>Результаты сравнения</h3>
-                    <div id="team1-results"></div>
-                    <div id="team2-results"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 id="team1-name"></h4>
+                            <p>Победы: <span id="team1-wins"></span></p>
+                            <p>Ничьи: <span id="team1-draws"></span></p>
+                            <p>Поражения: <span id="team1-losses"></span></p>
+                            <p>Среднее количество голов за матч: <span id="team1-avg-goals"></span></p>
+                            <p>Процент побед дома: <span id="team1-home-win-percentage"></span>%</p>
+                            <p>Процент побед на выезде: <span id="team1-away-win-percentage"></span>%</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="team2-name"></h4>
+                            <p>Победы: <span id="team2-wins"></span></p>
+                            <p>Ничьи: <span id="team2-draws"></span></p>
+                            <p>Поражения: <span id="team2-losses"></span></p>
+                            <p>Среднее количество голов за матч: <span id="team2-avg-goals"></span></p>
+                            <p>Процент побед дома: <span id="team2-home-win-percentage"></span>%</p>
+                            <p>Процент побед на выезде: <span id="team2-away-win-percentage"></span>%</p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <h3>Статистика встреч между командами</h3>
+                            <p>Победы <span id="team1-name-head"></span>: <span id="team1-wins-head"></span></p>
+                            <p>Победы <span id="team2-name-head"></span>: <span id="team2-wins-head"></span></p>
+                            <p>Среднее количество голов в матчах: <span id="head-to-head-avg-goals"></span></p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <h3>Последние матчи между командами</h3>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Дата</th>
+                                        <th>Соперник</th>
+                                        <th>Счет</th>
+                                        <th>Тип матча</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="head-to-head-matches">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Графики -->
+                    <div class="row mt-4">
+                        <div class="col-md-6 chart-container">
+                            <h3>Статистика побед</h3>
+                            <canvas id="winsChart"></canvas>
+                        </div>
+                        <div class="col-md-6 chart-container">
+                            <h3>Статистика голов</h3>
+                            <canvas id="goalsChart"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,6 +152,8 @@
     <!-- Подключаем jQuery и Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Подключаем Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Наш JavaScript -->
     <script>
@@ -107,54 +170,84 @@
 
                 // Запрос данных о матчах команд
                 $.get(`/compare?team1=${team1}&team2=${team2}`, function(data) {
-                    // Отображение результатов
-                    $('#team1-results').html(`
-                        <h4>${team1}</h4>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Дата</th>
-                                    <th>Соперник</th>
-                                    <th>Счет</th>
-                                    <th>Тип матча</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${data.team1_matches.map(match => `
-                                    <tr>
-                                        <td>${match.date}</td>
-                                        <td>${match.opponent}</td>
-                                        <td>${match.score}</td>
-                                        <td>${match.match_type}</td>
-                                    </tr>
-                                `).join('')}
-                            </tbody>
-                        </table>
-                    `);
+                    // Отображение общей статистики
+                    $('#team1-name').text(team1);
+                    $('#team1-wins').text(data.team1_stats.wins);
+                    $('#team1-draws').text(data.team1_stats.draws);
+                    $('#team1-losses').text(data.team1_stats.losses);
+                    $('#team1-avg-goals').text(data.team1_stats.avg_goals);
+                    $('#team1-home-win-percentage').text(data.team1_stats.home_win_percentage);
+                    $('#team1-away-win-percentage').text(data.team1_stats.away_win_percentage);
 
-                    $('#team2-results').html(`
-                        <h4>${team2}</h4>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Дата</th>
-                                    <th>Соперник</th>
-                                    <th>Счет</th>
-                                    <th>Тип матча</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${data.team2_matches.map(match => `
-                                    <tr>
-                                        <td>${match.date}</td>
-                                        <td>${match.opponent}</td>
-                                        <td>${match.score}</td>
-                                        <td>${match.match_type}</td>
-                                    </tr>
-                                `).join('')}
-                            </tbody>
-                        </table>
-                    `);
+                    $('#team2-name').text(team2);
+                    $('#team2-wins').text(data.team2_stats.wins);
+                    $('#team2-draws').text(data.team2_stats.draws);
+                    $('#team2-losses').text(data.team2_stats.losses);
+                    $('#team2-avg-goals').text(data.team2_stats.avg_goals);
+                    $('#team2-home-win-percentage').text(data.team2_stats.home_win_percentage);
+                    $('#team2-away-win-percentage').text(data.team2_stats.away_win_percentage);
+
+                    // Отображение статистики встреч между командами
+                    $('#team1-name-head').text(team1);
+                    $('#team1-wins-head').text(data.head_to_head_stats.team1_wins);
+                    $('#team2-name-head').text(team2);
+                    $('#team2-wins-head').text(data.head_to_head_stats.team2_wins);
+                    $('#head-to-head-avg-goals').text(data.head_to_head_stats.avg_goals);
+
+                    // Отображение матчей между командами
+                    $('#head-to-head-matches').html(
+                        data.head_to_head_matches.map(match => `
+                            <tr>
+                                <td>${match.date}</td>
+                                <td>${match.opponent}</td>
+                                <td>${match.score}</td>
+                                <td>${match.match_type}</td>
+                            </tr>
+                        `).join('')
+                    );
+
+                    // Создание графиков
+                    const winsChart = new Chart(document.getElementById('winsChart'), {
+                        type: 'bar',
+                        data: {
+                            labels: [team1, team2],
+                            datasets: [{
+                                label: 'Победы',
+                                data: [data.team1_stats.wins, data.team2_stats.wins],
+                                backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)'],
+                                borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+
+                    const goalsChart = new Chart(document.getElementById('goalsChart'), {
+                        type: 'bar',
+                        data: {
+                            labels: [team1, team2],
+                            datasets: [{
+                                label: 'Голы',
+                                data: [data.team1_stats.avg_goals, data.team2_stats.avg_goals],
+                                backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)'],
+                                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
                 });
             });
         });
