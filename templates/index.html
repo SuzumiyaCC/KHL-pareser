@@ -21,8 +21,14 @@
                     {% for match in matches %}
                     <tr>
                         <td>{{ match[1] }}</td>
-                        <td>{{ match[2] }}</td>
-                        <td>{{ match[3] }}</td>
+                        <td>
+                            <img src="{{ url_for('static', filename='images/' + match[2] + '.png') }}" alt="{{ match[2] }}" style="width: 30px; height: 30px; margin-right: 10px;">
+                            {{ match[2] }}
+                        </td>
+                        <td>
+                            <img src="{{ url_for('static', filename='images/' + match[3] + '.png') }}" alt="{{ match[3] }}" style="width: 30px; height: 30px; margin-right: 10px;">
+                            {{ match[3] }}
+                        </td>
                         <td>{{ match[4] }} : {{ match[5] }}</td>
                         <td>{{ match[6] }}</td>
                     </tr>
@@ -37,6 +43,7 @@
             <div class="list-group">
                 {% for team in top_teams %}
                     <div class="list-group-item">
+                        <img src="{{ url_for('static', filename='images/' + team[0] + '.png') }}" alt="{{ team[0] }}" style="width: 30px; height: 30px; margin-right: 10px;">
                         <strong>{{ team[0] }}</strong>: {{ team[1] }} очков
                     </div>
                 {% endfor %}

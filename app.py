@@ -1,9 +1,40 @@
 from flask import Flask, render_template, request, jsonify
 import psycopg2
 from werkzeug.middleware.proxy_fix import ProxyFix
+import logging
+import os
 
-app = Flask(__name__)
+# Настройка логирования
+log_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'app.log')
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file),  # Логи в файл
+        logging.StreamHandler()         # Логи в консоль (опционально)
+    ]
+)
+logger = logging.getLogger(__name__)
+
+app = Flask(__name__, static_folder='/app/scripts/static')
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
+
+
+
+# Логирование всех запросов
+@app.before_request
+def log_request():
+    logger.debug(f"Request URL: {request.url}")
+    logger.debug(f"Request Path: {request.path}")
+    logger.debug(f"Request Method: {request.method}")
+
+# Логирование статических файлов
+@app.after_request
+def log_response(response):
+    if request.path.startswith('/static/'):
+        logger.debug(f"Static file request: {request.path}")
+        logger.debug(f"Response status: {response.status}")
+    return response
 
 def connect_to_db():
     try:

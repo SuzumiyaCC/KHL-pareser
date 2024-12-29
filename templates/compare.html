@@ -43,7 +43,10 @@
             resultsDiv.innerHTML = `
                 <div class="row">
                     <div class="col-md-6">
-                        <h3>${team1}</h3>
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/static/images/${team1}.png" alt="${team1}" class="me-3" style="width: 30px; height: 30px;">
+                            <h3>${team1}</h3>
+                        </div>
                         <p><strong>Победы:</strong> ${data.team1_stats.wins}</p>
                         <p><strong>Поражения:</strong> ${data.team1_stats.losses}</p>
                         <p><strong>Всего матчей:</strong> ${data.team1_stats.total_matches}</p>
@@ -58,7 +61,10 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h3>${team2}</h3>
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/static/images/${team2}.png" alt="${team2}" class="me-3" style="width: 30px; height: 30px;">
+                            <h3>${team2}</h3>
+                        </div>
                         <p><strong>Победы:</strong> ${data.team2_stats.wins}</p>
                         <p><strong>Поражения:</strong> ${data.team2_stats.losses}</p>
                         <p><strong>Всего матчей:</strong> ${data.team2_stats.total_matches}</p>
@@ -108,7 +114,10 @@
                 <h3 class="mt-4">Последние матчи команд</h3>
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>${team1}</h4>
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/static/images/${team1}.png" alt="${team1}" class="me-3" style="width: 80px; height: 80px;">
+                            <h4>${team1}</h4>
+                        </div>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -140,7 +149,10 @@
                         </table>
                     </div>
                     <div class="col-md-6">
-                        <h4>${team2}</h4>
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/static/images/${team2}.png" alt="${team2}" class="me-3" style="width: 80px; height: 80px;">
+                            <h4>${team2}</h4>
+                        </div>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -191,13 +203,19 @@
                 <h3 class="mt-4">Тренды команд</h3>
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>${team1}</h4>
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/static/images/${team1}.png" alt="${team1}" class="me-3" style="width: 80px; height: 80px;">
+                            <h4>${team1}</h4>
+                        </div>
                         <div class="chart-container">
                             <canvas id="trendsChartTeam1"></canvas>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h4>${team2}</h4>
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/static/images/${team2}.png" alt="${team2}" class="me-3" style="width: 80px; height: 80px;">
+                            <h4>${team2}</h4>
+                        </div>
                         <div class="chart-container">
                             <canvas id="trendsChartTeam2"></canvas>
                         </div>
