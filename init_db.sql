@@ -18,6 +18,20 @@ GRANT ALL PRIVILEGES ON TABLE match_types TO khl_user;
 -- Предоставляем права на последовательность
 GRANT ALL PRIVILEGES ON SEQUENCE match_types_id_seq TO khl_user;
 
+
+CREATE TABLE summary_score (
+    id SERIAL PRIMARY KEY,
+    team_name VARCHAR(255) NOT NULL,
+    points INTEGER NOT NULL,
+    last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Предоставляем права на таблицу пользователю khl_user
+GRANT ALL PRIVILEGES ON TABLE summary_score TO khl_user;
+-- Предоставляем права на последовательность
+GRANT ALL PRIVILEGES ON SEQUENCE summary_score_id_seq TO khl_user;
+
+
 -- Создаем таблицы и другую необходимую структуру
 CREATE TABLE IF NOT EXISTS teams (
     id SERIAL PRIMARY KEY,

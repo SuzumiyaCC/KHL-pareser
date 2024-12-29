@@ -25,6 +25,7 @@
 {% endblock %}
 
 {% block extra_js %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         document.getElementById('compare-form').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -52,6 +53,9 @@
                         <p><strong>Процент побед дома:</strong> ${data.team1_stats.home_win_percentage}%</p>
                         <p><strong>Процент побед на выезде:</strong> ${data.team1_stats.away_win_percentage}%</p>
                         <p><strong>Серия побед:</strong> ${data.team1_stats.win_streak}</p>
+                        <div class="win-streak">
+                            ${renderWinStreak(data.team1_matches, team1)}
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <h3>${team2}</h3>
@@ -64,6 +68,9 @@
                         <p><strong>Процент побед дома:</strong> ${data.team2_stats.home_win_percentage}%</p>
                         <p><strong>Процент побед на выезде:</strong> ${data.team2_stats.away_win_percentage}%</p>
                         <p><strong>Серия побед:</strong> ${data.team2_stats.win_streak}</p>
+                        <div class="win-streak">
+                            ${renderWinStreak(data.team2_matches, team2)}
+                        </div>
                     </div>
                 </div>
 
@@ -179,6 +186,23 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Тренды -->
+                <h3 class="mt-4">Тренды команд</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>${team1}</h4>
+                        <div class="chart-container">
+                            <canvas id="trendsChartTeam1"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>${team2}</h4>
+                        <div class="chart-container">
+                            <canvas id="trendsChartTeam2"></canvas>
+                        </div>
+                    </div>
+                </div>
             `;
 
             // Создаем диаграмму для сравнения побед
@@ -234,6 +258,120 @@
                     }
                 }
             });
+
+            // Загружаем тренды для первой команды
+            fetch(`/team-trends?team=${team1}`)
+                .then(response => response.json())
+                .then(trendsData => {
+                    renderTrendsChart('trendsChartTeam1', trendsData, team1);
+                });
+
+            // Загружаем тренды для второй команды
+            fetch(`/team-trends?team=${team2}`)
+                .then(response => response.json())
+                .then(trendsData => {
+                    renderTrendsChart('trendsChartTeam2', trendsData, team2);
+                });
+        }
+
+        function renderWinStreak(matches, team) {
+            let streak = [];
+            for (const match of matches) {
+                const [homeScore, awayScore] = match.score.split(' : ');
+                const isWin = (match.home_team === team && parseInt(homeScore) > parseInt(awayScore)) || 
+                              (match.away_team === team && parseInt(awayScore) > parseInt(homeScore));
+                if (isWin) {
+                    streak.push(match);
+                } else {
+                    break;
+                }
+            }
+
+            return streak.map(match => `
+                <div class="win-streak-item" title="${match.home_team} ${match.score} ${match.away_team}">
+                    <span>${match.date}</span>
+                </div>
+            `).join('');
+        }
+
+        function renderTrendsChart(chartId, trendsData, team) {
+            const labels = trendsData.map(match => match.date);
+            const data = trendsData.map(match => match.result === "Победа" ? 1 : 0);
+
+            const ctx = document.getElementById(chartId).getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Результаты матчей',
+                        data: data,
+                        borderColor: '#b30000',
+                        backgroundColor: 'rgba(179, 0, 0, 0.1)',
+                        fill: true,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value === 1 ? 'Победа' : 'Поражение';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const match = trendsData[context.dataIndex];
+                                    return `${match.home_team} ${match.score} ${match.away_team}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
         }
     </script>
+
+    <style>
+        .win-streak {
+            display: flex;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .win-streak-item {
+            width: 30px;
+            height: 30px;
+            background-color: green;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .win-streak-item span {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+
+        .win-streak-item:hover span {
+            display: block;
+        }
+    </style>
 {% endblock %}

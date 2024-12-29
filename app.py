@@ -206,5 +206,44 @@ def compare_teams():
     })
 
 
+
+@app.route('/team-trends')
+def team_trends():
+    team = request.args.get('team')
+
+    if not team:
+        return jsonify({"error": "Выберите команду"}), 400
+
+    conn = connect_to_db()
+    if not conn:
+        return jsonify({"error": "Ошибка подключения к базе данных"}), 500
+
+    cursor = conn.cursor()
+
+    # Получаем последние 10 матчей команды
+    cursor.execute("""
+        SELECT date_time, home_team, away_team, home_score, away_score, match_type 
+        FROM games 
+        WHERE (home_team = %s OR away_team = %s) 
+        ORDER BY date_time DESC 
+        LIMIT 10
+    """, (team, team))
+    matches = cursor.fetchall()
+
+    conn.close()
+
+    # Форматируем данные для JSON
+    def format_matches(matches):
+        return [{
+            "date": match[0].strftime('%Y-%m-%d %H:%M'),
+            "home_team": match[1],
+            "away_team": match[2],
+            "score": f"{match[3]} : {match[4]}",
+            "match_type": match[5],
+            "result": "Победа" if (match[1] == team and match[3] > match[4]) or (match[2] == team and match[4] > match[3]) else "Поражение"
+        } for match in matches]
+
+    return jsonify(format_matches(matches))
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
