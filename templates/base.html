@@ -8,57 +8,83 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Подключаем Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Подключаем Animate.css для анимаций -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
-            background-color: #1a1a1a;
-            color: #ffffff;
+            background-color: #121212; /* Темный фон */
+            color: #ffffff; /* Белый текст */
+            font-family: 'Arial', sans-serif;
         }
         .navbar {
-            background-color: #b30000;
+            background-color: #0d47a1; /* Темно-синий */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .navbar:hover {
+            background-color: #1565c0; /* Более светлый синий */
         }
         .navbar-brand, .nav-link {
             color: #ffffff !important;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #bbdefb !important; /* Светло-голубой */
         }
         .table {
-            background-color: #262626;
+            background-color: #1e1e1e; /* Темно-серый */
             color: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .table th, .table td {
-            border-color: #404040;
+            border-color: #333333; /* Серый */
         }
         .btn-primary {
-            background-color: #b30000;
-            border-color: #b30000;
+            background-color: #0d47a1; /* Темно-синий */
+            border-color: #0d47a1;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .btn-primary:hover {
-            background-color: #990000;
-            border-color: #990000;
+            background-color: #1565c0; /* Более светлый синий */
+            border-color: #1565c0;
+            transform: translateY(-2px);
         }
         .form-select {
-            background-color: #262626;
+            background-color: #1e1e1e; /* Темно-серый */
             color: #ffffff;
-            border-color: #404040;
+            border-color: #333333; /* Серый */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
         .form-select:focus {
-            background-color: #262626;
+            background-color: #1e1e1e; /* Темно-серый */
             color: #ffffff;
-            border-color: #b30000;
-            box-shadow: 0 0 0 0.25rem rgba(179, 0, 0, 0.25);
+            border-color: #0d47a1; /* Темно-синий */
+            box-shadow: 0 0 0 0.25rem rgba(13, 71, 161, 0.25); /* Синий */
         }
         #results {
-            background-color: #262626;
+            background-color: #1e1e1e; /* Темно-серый */
             padding: 15px;
             border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .chart-container {
-            background-color: #262626;
+            background-color: #1e1e1e; /* Темно-серый */
             padding: 20px;
             border-radius: 5px;
             margin-bottom: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background-color: #0d47a1; /* Темно-синий */
+            color: #ffffff;
+            padding: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        .footer:hover {
+            background-color: #1565c0; /* Более светлый синий */
+        }
+        .animate__animated {
+            --animate-duration: 1s;
         }
     </style>
     {% block extra_css %}{% endblock %}
@@ -66,7 +92,7 @@
 <body>
     <header>
         <!-- Навигация -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark animate__animated animate__fadeInDown">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">Лудка</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,10 +111,10 @@
             </div>
         </nav>
     </header>
-    <main class="container mt-4">
+    <main class="container mt-4 animate__animated animate__fadeIn">
         {% block content %}{% endblock %}
     </main>
-    <footer class="text-center mt-4 p-3" style="background-color: #b30000;">
+    <footer class="footer text-center mt-4 p-3 animate__animated animate__fadeInUp">
         <p class="mb-0">&copy; Лудка сетевого шизика 2024</p>
     </footer>
     <!-- Подключаем Bootstrap JS и зависимости -->

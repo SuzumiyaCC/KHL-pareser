@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify
 import psycopg2
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
 
@@ -29,17 +28,26 @@ def index():
     cursor = conn.cursor()
 
     # Получаем все матчи
-    cursor.execute("SELECT * FROM games ORDER BY date_time DESC")
+    cursor.execute("SELECT * FROM games ORDER BY date_time DESC limit 24")
     matches = cursor.fetchall()
 
     # Получаем список всех команд
     cursor.execute("SELECT DISTINCT home_team FROM games UNION SELECT DISTINCT away_team FROM games")
     teams = [row[0] for row in cursor.fetchall()]
 
+    # Получаем топ команд по очкам
+    cursor.execute("""
+        SELECT team_name, points
+        FROM summary_score
+        ORDER BY points DESC
+        LIMIT 30
+    """)
+    top_teams = cursor.fetchall()
+
     conn.close()
 
     # Рендерим главную страницу, передавая данные в шаблон
-    return render_template('index.html', matches=matches, teams=teams)
+    return render_template('index.html', matches=matches, teams=teams, top_teams=top_teams)
 
 @app.route('/compare-page')
 def compare_page():
@@ -204,8 +212,6 @@ def compare_teams():
             "avg_goals": round(head_to_head_stats[2], 2)
         }
     })
-
-
 
 @app.route('/team-trends')
 def team_trends():
