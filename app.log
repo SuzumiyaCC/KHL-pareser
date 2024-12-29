@@ -4518,3 +4518,909 @@ TypeError: type NoneType doesn't define __round__ method
 2024-12-29 15:05:53,533 - app - DEBUG - Response status: 304 NOT MODIFIED
 2024-12-29 15:05:53,534 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:05:53] "[36mGET /static/images/ЦСКА.png HTTP/1.1[0m" 304 -
 2024-12-29 15:05:53,535 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:05:53] "[36mGET /static/images/Динамо%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:44,673 - app - DEBUG - Request URL: http://192.168.89.222:5000/compare-page
+2024-12-29 15:06:44,673 - app - DEBUG - Request Path: /compare-page
+2024-12-29 15:06:44,674 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:44,681 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:44] "GET /compare-page HTTP/1.1" 200 -
+2024-12-29 15:06:47,695 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/
+2024-12-29 15:06:47,695 - app - DEBUG - Request Path: /
+2024-12-29 15:06:47,695 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,705 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "GET / HTTP/1.1" 200 -
+2024-12-29 15:06:47,771 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Витязь.png
+2024-12-29 15:06:47,771 - app - DEBUG - Request Path: /static/images/Витязь.png
+2024-12-29 15:06:47,771 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,772 - app - DEBUG - Static file request: /static/images/Витязь.png
+2024-12-29 15:06:47,772 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,772 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Витязь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,773 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Спартак%20Москва.png
+2024-12-29 15:06:47,775 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Торпедо.png
+2024-12-29 15:06:47,776 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Барыс.png
+2024-12-29 15:06:47,776 - app - DEBUG - Request Path: /static/images/Спартак Москва.png
+2024-12-29 15:06:47,777 - app - DEBUG - Request Path: /static/images/Торпедо.png
+2024-12-29 15:06:47,777 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Ак%20Барс.png
+2024-12-29 15:06:47,778 - app - DEBUG - Request Path: /static/images/Барыс.png
+2024-12-29 15:06:47,778 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,779 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Трактор.png
+2024-12-29 15:06:47,779 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Автомобилист.png
+2024-12-29 15:06:47,779 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,780 - app - DEBUG - Request Path: /static/images/Ак Барс.png
+2024-12-29 15:06:47,780 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,780 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Металлург%20Магнитогорск.png
+2024-12-29 15:06:47,782 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Салават%20Юлаев.png
+2024-12-29 15:06:47,782 - app - DEBUG - Request Path: /static/images/Автомобилист.png
+2024-12-29 15:06:47,783 - app - DEBUG - Static file request: /static/images/Спартак Москва.png
+2024-12-29 15:06:47,783 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Северсталь.png
+2024-12-29 15:06:47,783 - app - DEBUG - Static file request: /static/images/Торпедо.png
+2024-12-29 15:06:47,784 - app - DEBUG - Request Path: /static/images/Трактор.png
+2024-12-29 15:06:47,784 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,785 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Авангард.png
+2024-12-29 15:06:47,785 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,785 - app - DEBUG - Static file request: /static/images/Барыс.png
+2024-12-29 15:06:47,786 - app - DEBUG - Request Path: /static/images/Салават Юлаев.png
+2024-12-29 15:06:47,786 - app - DEBUG - Request Path: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:06:47,786 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,787 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Адмирал.png
+2024-12-29 15:06:47,787 - app - DEBUG - Request Path: /static/images/Северсталь.png
+2024-12-29 15:06:47,788 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Лада.png
+2024-12-29 15:06:47,788 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Нефтехимик.png
+2024-12-29 15:06:47,788 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,789 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,789 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сибирь.png
+2024-12-29 15:06:47,790 - app - DEBUG - Request Path: /static/images/Авангард.png
+2024-12-29 15:06:47,791 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/ЦСКА.png
+2024-12-29 15:06:47,792 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Минск.png
+2024-12-29 15:06:47,792 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,793 - app - DEBUG - Static file request: /static/images/Автомобилист.png
+2024-12-29 15:06:47,793 - app - DEBUG - Static file request: /static/images/Ак Барс.png
+2024-12-29 15:06:47,793 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,794 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,800 - app - DEBUG - Request Path: /static/images/ЦСКА.png
+2024-12-29 15:06:47,795 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Москва.png
+2024-12-29 15:06:47,801 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,796 - app - DEBUG - Request Path: /static/images/Адмирал.png
+2024-12-29 15:06:47,796 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,797 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Локомотив.png
+2024-12-29 15:06:47,797 - app - DEBUG - Request Path: /static/images/Лада.png
+2024-12-29 15:06:47,797 - app - DEBUG - Request Path: /static/images/Нефтехимик.png
+2024-12-29 15:06:47,798 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сочи.png
+2024-12-29 15:06:47,798 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Торпедо.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,799 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Амур.png
+2024-12-29 15:06:47,802 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Автомобилист.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,803 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,800 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/СКА.png
+2024-12-29 15:06:47,800 - app - DEBUG - Static file request: /static/images/Трактор.png
+2024-12-29 15:06:47,795 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Куньлунь%20РС.png
+2024-12-29 15:06:47,801 - app - DEBUG - Request Path: /static/images/Динамо Минск.png
+2024-12-29 15:06:47,801 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Барыс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,795 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Спартак%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,801 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,802 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,802 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,802 - app - DEBUG - Static file request: /static/images/Салават Юлаев.png
+2024-12-29 15:06:47,802 - app - DEBUG - Request Path: /static/images/Динамо Москва.png
+2024-12-29 15:06:47,799 - app - DEBUG - Request Path: /static/images/Сибирь.png
+2024-12-29 15:06:47,799 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,803 - app - DEBUG - Request Path: /static/images/Локомотив.png
+2024-12-29 15:06:47,803 - app - DEBUG - Static file request: /static/images/Адмирал.png
+2024-12-29 15:06:47,803 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,803 - app - DEBUG - Request Path: /static/images/Куньлунь РС.png
+2024-12-29 15:06:47,804 - app - DEBUG - Request Path: /static/images/Амур.png
+2024-12-29 15:06:47,805 - app - DEBUG - Static file request: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:06:47,805 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,806 - app - DEBUG - Static file request: /static/images/Северсталь.png
+2024-12-29 15:06:47,806 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,806 - app - DEBUG - Request Path: /static/images/Сочи.png
+2024-12-29 15:06:47,806 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,807 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Ак%20Барс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,808 - app - DEBUG - Static file request: /static/images/Нефтехимик.png
+2024-12-29 15:06:47,809 - app - DEBUG - Static file request: /static/images/ЦСКА.png
+2024-12-29 15:06:47,809 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,809 - app - DEBUG - Request Path: /static/images/СКА.png
+2024-12-29 15:06:47,811 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,810 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,810 - app - DEBUG - Static file request: /static/images/Авангард.png
+2024-12-29 15:06:47,810 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,810 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,810 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,811 - app - DEBUG - Static file request: /static/images/Лада.png
+2024-12-29 15:06:47,811 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,809 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,813 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,812 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Трактор.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,812 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,813 - app - DEBUG - Static file request: /static/images/Динамо Минск.png
+2024-12-29 15:06:47,814 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,811 - app - DEBUG - Static file request: /static/images/Динамо Москва.png
+2024-12-29 15:06:47,814 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Салават%20Юлаев.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,814 - app - DEBUG - Request Method: GET
+2024-12-29 15:06:47,815 - app - DEBUG - Static file request: /static/images/СКА.png
+2024-12-29 15:06:47,815 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,815 - app - DEBUG - Static file request: /static/images/Локомотив.png
+2024-12-29 15:06:47,815 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Адмирал.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,816 - app - DEBUG - Static file request: /static/images/Куньлунь РС.png
+2024-12-29 15:06:47,816 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,817 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Металлург%20Магнитогорск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,817 - app - DEBUG - Static file request: /static/images/Сибирь.png
+2024-12-29 15:06:47,818 - app - DEBUG - Static file request: /static/images/Амур.png
+2024-12-29 15:06:47,818 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,819 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/ЦСКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,819 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,820 - app - DEBUG - Static file request: /static/images/Сочи.png
+2024-12-29 15:06:47,820 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,820 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Северсталь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,821 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/СКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,821 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,821 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,822 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Куньлунь%20РС.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,822 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Нефтехимик.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,822 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,822 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,822 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Динамо%20Минск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,823 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Динамо%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,823 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:06:47,824 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Авангард.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,825 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Локомотив.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,825 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Лада.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,826 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Сибирь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,827 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Амур.png HTTP/1.1[0m" 304 -
+2024-12-29 15:06:47,828 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:06:47] "[36mGET /static/images/Сочи.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:17,910 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/
+2024-12-29 15:08:17,910 - app - DEBUG - Request Path: /
+2024-12-29 15:08:17,910 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:17,922 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:17] "GET / HTTP/1.1" 200 -
+2024-12-29 15:08:17,992 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Витязь.png
+2024-12-29 15:08:17,992 - app - DEBUG - Request Path: /static/images/Витязь.png
+2024-12-29 15:08:17,992 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:17,993 - app - DEBUG - Static file request: /static/images/Витязь.png
+2024-12-29 15:08:17,993 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:17,993 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:17] "[36mGET /static/images/Витязь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:17,997 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Салават%20Юлаев.png
+2024-12-29 15:08:17,998 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Спартак%20Москва.png
+2024-12-29 15:08:17,998 - app - DEBUG - Request Path: /static/images/Салават Юлаев.png
+2024-12-29 15:08:17,999 - app - DEBUG - Request Path: /static/images/Спартак Москва.png
+2024-12-29 15:08:18,000 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,000 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,001 - app - DEBUG - Static file request: /static/images/Спартак Москва.png
+2024-12-29 15:08:18,001 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,001 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Спартак%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,002 - app - DEBUG - Static file request: /static/images/Салават Юлаев.png
+2024-12-29 15:08:18,003 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Торпедо.png
+2024-12-29 15:08:18,004 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Барыс.png
+2024-12-29 15:08:18,005 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,005 - app - DEBUG - Request Path: /static/images/Торпедо.png
+2024-12-29 15:08:18,005 - app - DEBUG - Request Path: /static/images/Барыс.png
+2024-12-29 15:08:18,005 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Салават%20Юлаев.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,005 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,005 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,006 - app - DEBUG - Static file request: /static/images/Торпедо.png
+2024-12-29 15:08:18,007 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,007 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Торпедо.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,008 - app - DEBUG - Static file request: /static/images/Барыс.png
+2024-12-29 15:08:18,008 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,008 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Барыс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,014 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Ак%20Барс.png
+2024-12-29 15:08:18,014 - app - DEBUG - Request Path: /static/images/Ак Барс.png
+2024-12-29 15:08:18,014 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,015 - app - DEBUG - Static file request: /static/images/Ак Барс.png
+2024-12-29 15:08:18,015 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,015 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Ак%20Барс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,016 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Трактор.png
+2024-12-29 15:08:18,016 - app - DEBUG - Request Path: /static/images/Трактор.png
+2024-12-29 15:08:18,016 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,017 - app - DEBUG - Static file request: /static/images/Трактор.png
+2024-12-29 15:08:18,017 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,018 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Трактор.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,019 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Автомобилист.png
+2024-12-29 15:08:18,019 - app - DEBUG - Request Path: /static/images/Автомобилист.png
+2024-12-29 15:08:18,019 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,020 - app - DEBUG - Static file request: /static/images/Автомобилист.png
+2024-12-29 15:08:18,020 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,021 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Автомобилист.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,022 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Металлург%20Магнитогорск.png
+2024-12-29 15:08:18,023 - app - DEBUG - Request Path: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:08:18,023 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,023 - app - DEBUG - Static file request: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:08:18,023 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,024 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Металлург%20Магнитогорск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,025 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Куньлунь%20РС.png
+2024-12-29 15:08:18,025 - app - DEBUG - Request Path: /static/images/Куньлунь РС.png
+2024-12-29 15:08:18,025 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,026 - app - DEBUG - Static file request: /static/images/Куньлунь РС.png
+2024-12-29 15:08:18,026 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,026 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Куньлунь%20РС.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,028 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Северсталь.png
+2024-12-29 15:08:18,028 - app - DEBUG - Request Path: /static/images/Северсталь.png
+2024-12-29 15:08:18,028 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,028 - app - DEBUG - Static file request: /static/images/Северсталь.png
+2024-12-29 15:08:18,028 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,029 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Северсталь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,029 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Авангард.png
+2024-12-29 15:08:18,031 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Лада.png
+2024-12-29 15:08:18,032 - app - DEBUG - Request Path: /static/images/Авангард.png
+2024-12-29 15:08:18,032 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,033 - app - DEBUG - Static file request: /static/images/Авангард.png
+2024-12-29 15:08:18,034 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,034 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Авангард.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,034 - app - DEBUG - Request Path: /static/images/Лада.png
+2024-12-29 15:08:18,035 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,033 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Минск.png
+2024-12-29 15:08:18,036 - app - DEBUG - Request Path: /static/images/Динамо Минск.png
+2024-12-29 15:08:18,036 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,035 - app - DEBUG - Static file request: /static/images/Лада.png
+2024-12-29 15:08:18,037 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,038 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Лада.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,036 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Адмирал.png
+2024-12-29 15:08:18,038 - app - DEBUG - Request Path: /static/images/Адмирал.png
+2024-12-29 15:08:18,038 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,037 - app - DEBUG - Static file request: /static/images/Динамо Минск.png
+2024-12-29 15:08:18,041 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сибирь.png
+2024-12-29 15:08:18,042 - app - DEBUG - Static file request: /static/images/Адмирал.png
+2024-12-29 15:08:18,042 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,043 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Нефтехимик.png
+2024-12-29 15:08:18,043 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/ЦСКА.png
+2024-12-29 15:08:18,044 - app - DEBUG - Request Path: /static/images/Сибирь.png
+2024-12-29 15:08:18,048 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,044 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,049 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Адмирал.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,046 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Москва.png
+2024-12-29 15:08:18,046 - app - DEBUG - Request Path: /static/images/Нефтехимик.png
+2024-12-29 15:08:18,046 - app - DEBUG - Request Path: /static/images/ЦСКА.png
+2024-12-29 15:08:18,047 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Локомотив.png
+2024-12-29 15:08:18,044 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сочи.png
+2024-12-29 15:08:18,051 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,049 - app - DEBUG - Static file request: /static/images/Сибирь.png
+2024-12-29 15:08:18,045 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Динамо%20Минск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,050 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Амур.png
+2024-12-29 15:08:18,051 - app - DEBUG - Request Path: /static/images/Динамо Москва.png
+2024-12-29 15:08:18,048 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/СКА.png
+2024-12-29 15:08:18,051 - app - DEBUG - Request Path: /static/images/Локомотив.png
+2024-12-29 15:08:18,051 - app - DEBUG - Request Path: /static/images/Сочи.png
+2024-12-29 15:08:18,052 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,052 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,052 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,052 - app - DEBUG - Static file request: /static/images/ЦСКА.png
+2024-12-29 15:08:18,053 - app - DEBUG - Static file request: /static/images/Сочи.png
+2024-12-29 15:08:18,054 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,054 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,054 - app - DEBUG - Request Path: /static/images/Амур.png
+2024-12-29 15:08:18,054 - app - DEBUG - Request Path: /static/images/СКА.png
+2024-12-29 15:08:18,055 - app - DEBUG - Static file request: /static/images/Локомотив.png
+2024-12-29 15:08:18,055 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,055 - app - DEBUG - Static file request: /static/images/Нефтехимик.png
+2024-12-29 15:08:18,055 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,056 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,056 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,056 - app - DEBUG - Request Method: GET
+2024-12-29 15:08:18,056 - app - DEBUG - Static file request: /static/images/Динамо Москва.png
+2024-12-29 15:08:18,057 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Сибирь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,057 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/ЦСКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,057 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,058 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Нефтехимик.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,059 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,059 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Динамо%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,057 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Сочи.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,058 - app - DEBUG - Static file request: /static/images/Амур.png
+2024-12-29 15:08:18,058 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Локомотив.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,061 - app - DEBUG - Static file request: /static/images/СКА.png
+2024-12-29 15:08:18,062 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,063 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:08:18,064 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/СКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:08:18,064 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:08:18] "[36mGET /static/images/Амур.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:11,962 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/
+2024-12-29 15:10:11,962 - app - DEBUG - Request Path: /
+2024-12-29 15:10:11,962 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:11,976 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:11] "GET / HTTP/1.1" 200 -
+2024-12-29 15:10:12,047 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Витязь.png
+2024-12-29 15:10:12,047 - app - DEBUG - Request Path: /static/images/Витязь.png
+2024-12-29 15:10:12,047 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,048 - app - DEBUG - Static file request: /static/images/Витязь.png
+2024-12-29 15:10:12,048 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,048 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Витязь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,051 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Нефтехимик.png
+2024-12-29 15:10:12,052 - app - DEBUG - Request Path: /static/images/Нефтехимик.png
+2024-12-29 15:10:12,052 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,053 - app - DEBUG - Static file request: /static/images/Нефтехимик.png
+2024-12-29 15:10:12,053 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,053 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Нефтехимик.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,055 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Спартак%20Москва.png
+2024-12-29 15:10:12,056 - app - DEBUG - Request Path: /static/images/Спартак Москва.png
+2024-12-29 15:10:12,057 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Торпедо.png
+2024-12-29 15:10:12,057 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,058 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Ак%20Барс.png
+2024-12-29 15:10:12,058 - app - DEBUG - Request Path: /static/images/Торпедо.png
+2024-12-29 15:10:12,059 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Барыс.png
+2024-12-29 15:10:12,059 - app - DEBUG - Request Path: /static/images/Ак Барс.png
+2024-12-29 15:10:12,060 - app - DEBUG - Static file request: /static/images/Спартак Москва.png
+2024-12-29 15:10:12,060 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Трактор.png
+2024-12-29 15:10:12,060 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,061 - app - DEBUG - Request Path: /static/images/Барыс.png
+2024-12-29 15:10:12,061 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Автомобилист.png
+2024-12-29 15:10:12,061 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,062 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,063 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Металлург%20Магнитогорск.png
+2024-12-29 15:10:12,063 - app - DEBUG - Request Path: /static/images/Трактор.png
+2024-12-29 15:10:12,065 - app - DEBUG - Static file request: /static/images/Торпедо.png
+2024-12-29 15:10:12,066 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Салават%20Юлаев.png
+2024-12-29 15:10:12,066 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,067 - app - DEBUG - Request Path: /static/images/Автомобилист.png
+2024-12-29 15:10:12,067 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Спартак%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,068 - app - DEBUG - Static file request: /static/images/Ак Барс.png
+2024-12-29 15:10:12,068 - app - DEBUG - Request Path: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:10:12,068 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,069 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Северсталь.png
+2024-12-29 15:10:12,069 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,071 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Торпедо.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,070 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,069 - app - DEBUG - Request Path: /static/images/Салават Юлаев.png
+2024-12-29 15:10:12,071 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,073 - app - DEBUG - Request Path: /static/images/Северсталь.png
+2024-12-29 15:10:12,072 - app - DEBUG - Static file request: /static/images/Барыс.png
+2024-12-29 15:10:12,072 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Авангард.png
+2024-12-29 15:10:12,073 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,073 - app - DEBUG - Static file request: /static/images/Трактор.png
+2024-12-29 15:10:12,073 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,074 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,075 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Адмирал.png
+2024-12-29 15:10:12,076 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Лада.png
+2024-12-29 15:10:12,077 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сибирь.png
+2024-12-29 15:10:12,077 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Ак%20Барс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,078 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,077 - app - DEBUG - Static file request: /static/images/Автомобилист.png
+2024-12-29 15:10:12,079 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Амур.png
+2024-12-29 15:10:12,080 - app - DEBUG - Static file request: /static/images/Северсталь.png
+2024-12-29 15:10:12,079 - app - DEBUG - Request Path: /static/images/Авангард.png
+2024-12-29 15:10:12,080 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,081 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/ЦСКА.png
+2024-12-29 15:10:12,082 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Куньлунь%20РС.png
+2024-12-29 15:10:12,083 - app - DEBUG - Static file request: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:10:12,085 - app - DEBUG - Request Path: /static/images/Куньлунь РС.png
+2024-12-29 15:10:12,085 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,084 - app - DEBUG - Request Path: /static/images/Лада.png
+2024-12-29 15:10:12,084 - app - DEBUG - Request Path: /static/images/Сибирь.png
+2024-12-29 15:10:12,084 - app - DEBUG - Request Path: /static/images/Адмирал.png
+2024-12-29 15:10:12,084 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Минск.png
+2024-12-29 15:10:12,086 - app - DEBUG - Static file request: /static/images/Куньлунь РС.png
+2024-12-29 15:10:12,089 - app - DEBUG - Request Path: /static/images/ЦСКА.png
+2024-12-29 15:10:12,086 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,091 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,091 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Металлург%20Магнитогорск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,088 - app - DEBUG - Static file request: /static/images/Салават Юлаев.png
+2024-12-29 15:10:12,089 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Локомотив.png
+2024-12-29 15:10:12,086 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,090 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Барыс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,092 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,093 - app - DEBUG - Static file request: /static/images/Лада.png
+2024-12-29 15:10:12,093 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,088 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Москва.png
+2024-12-29 15:10:12,087 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Автомобилист.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,093 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Лада.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,090 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сочи.png
+2024-12-29 15:10:12,095 - app - DEBUG - Request Path: /static/images/Амур.png
+2024-12-29 15:10:12,094 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,094 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/СКА.png
+2024-12-29 15:10:12,093 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,096 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,096 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,096 - app - DEBUG - Request Path: /static/images/Локомотив.png
+2024-12-29 15:10:12,097 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,097 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Северсталь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,097 - app - DEBUG - Request Path: /static/images/Динамо Минск.png
+2024-12-29 15:10:12,099 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,099 - app - DEBUG - Static file request: /static/images/Динамо Минск.png
+2024-12-29 15:10:12,099 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,100 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Динамо%20Минск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,100 - app - DEBUG - Static file request: /static/images/ЦСКА.png
+2024-12-29 15:10:12,101 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,101 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/ЦСКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,097 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,101 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Куньлунь%20РС.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,097 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,102 - app - DEBUG - Static file request: /static/images/Адмирал.png
+2024-12-29 15:10:12,103 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,103 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Адмирал.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,099 - app - DEBUG - Static file request: /static/images/Авангард.png
+2024-12-29 15:10:12,098 - app - DEBUG - Static file request: /static/images/Локомотив.png
+2024-12-29 15:10:12,107 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,108 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Локомотив.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,104 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,108 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Трактор.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,104 - app - DEBUG - Request Path: /static/images/Динамо Москва.png
+2024-12-29 15:10:12,109 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,109 - app - DEBUG - Static file request: /static/images/Динамо Москва.png
+2024-12-29 15:10:12,109 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,110 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Динамо%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,106 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Салават%20Юлаев.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,105 - app - DEBUG - Static file request: /static/images/Сибирь.png
+2024-12-29 15:10:12,110 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,111 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Сибирь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,107 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,111 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Авангард.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,105 - app - DEBUG - Static file request: /static/images/Амур.png
+2024-12-29 15:10:12,112 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,112 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Амур.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,112 - app - DEBUG - Request Path: /static/images/Сочи.png
+2024-12-29 15:10:12,112 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,113 - app - DEBUG - Static file request: /static/images/Сочи.png
+2024-12-29 15:10:12,113 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,113 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/Сочи.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:12,113 - app - DEBUG - Request Path: /static/images/СКА.png
+2024-12-29 15:10:12,113 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:12,114 - app - DEBUG - Static file request: /static/images/СКА.png
+2024-12-29 15:10:12,114 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:12,114 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:12] "[36mGET /static/images/СКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,049 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/
+2024-12-29 15:10:13,049 - app - DEBUG - Request Path: /
+2024-12-29 15:10:13,049 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,060 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "GET / HTTP/1.1" 200 -
+2024-12-29 15:10:13,142 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Амур.png
+2024-12-29 15:10:13,143 - app - DEBUG - Request Path: /static/images/Амур.png
+2024-12-29 15:10:13,143 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,144 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Витязь.png
+2024-12-29 15:10:13,144 - app - DEBUG - Request Path: /static/images/Витязь.png
+2024-12-29 15:10:13,145 - app - DEBUG - Static file request: /static/images/Амур.png
+2024-12-29 15:10:13,147 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,148 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Амур.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,147 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Торпедо.png
+2024-12-29 15:10:13,148 - app - DEBUG - Request Path: /static/images/Торпедо.png
+2024-12-29 15:10:13,148 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,146 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,146 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Спартак%20Москва.png
+2024-12-29 15:10:13,149 - app - DEBUG - Static file request: /static/images/Торпедо.png
+2024-12-29 15:10:13,150 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Барыс.png
+2024-12-29 15:10:13,153 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Ак%20Барс.png
+2024-12-29 15:10:13,154 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Трактор.png
+2024-12-29 15:10:13,155 - app - DEBUG - Static file request: /static/images/Витязь.png
+2024-12-29 15:10:13,155 - app - DEBUG - Request Path: /static/images/Спартак Москва.png
+2024-12-29 15:10:13,161 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,156 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Автомобилист.png
+2024-12-29 15:10:13,161 - app - DEBUG - Request Path: /static/images/Автомобилист.png
+2024-12-29 15:10:13,162 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,157 - app - DEBUG - Request Path: /static/images/Барыс.png
+2024-12-29 15:10:13,158 - app - DEBUG - Request Path: /static/images/Трактор.png
+2024-12-29 15:10:13,163 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,164 - app - DEBUG - Static file request: /static/images/Трактор.png
+2024-12-29 15:10:13,164 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,164 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Трактор.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,158 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Салават%20Юлаев.png
+2024-12-29 15:10:13,165 - app - DEBUG - Request Path: /static/images/Салават Юлаев.png
+2024-12-29 15:10:13,157 - app - DEBUG - Request Path: /static/images/Ак Барс.png
+2024-12-29 15:10:13,166 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,159 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,159 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Северсталь.png
+2024-12-29 15:10:13,156 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,162 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Лада.png
+2024-12-29 15:10:13,167 - app - DEBUG - Static file request: /static/images/Автомобилист.png
+2024-12-29 15:10:13,160 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Авангард.png
+2024-12-29 15:10:13,162 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,170 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,166 - app - DEBUG - Static file request: /static/images/Салават Юлаев.png
+2024-12-29 15:10:13,157 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Металлург%20Магнитогорск.png
+2024-12-29 15:10:13,175 - app - DEBUG - Request Path: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:10:13,175 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,176 - app - DEBUG - Static file request: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:10:13,176 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,176 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Металлург%20Магнитогорск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,163 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Адмирал.png
+2024-12-29 15:10:13,177 - app - DEBUG - Request Path: /static/images/Адмирал.png
+2024-12-29 15:10:13,177 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,177 - app - DEBUG - Static file request: /static/images/Адмирал.png
+2024-12-29 15:10:13,177 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,178 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Адмирал.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,172 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,179 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Автомобилист.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,175 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,179 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Салават%20Юлаев.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,172 - app - DEBUG - Request Path: /static/images/Авангард.png
+2024-12-29 15:10:13,180 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,172 - app - DEBUG - Request Path: /static/images/Лада.png
+2024-12-29 15:10:13,182 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,183 - app - DEBUG - Static file request: /static/images/Лада.png
+2024-12-29 15:10:13,183 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,183 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Лада.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,171 - app - DEBUG - Request Path: /static/images/Северсталь.png
+2024-12-29 15:10:13,184 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,172 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Торпедо.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,175 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Витязь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,175 - app - DEBUG - Static file request: /static/images/Барыс.png
+2024-12-29 15:10:13,186 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,186 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Барыс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,184 - app - DEBUG - Static file request: /static/images/Северсталь.png
+2024-12-29 15:10:13,187 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,171 - app - DEBUG - Static file request: /static/images/Ак Барс.png
+2024-12-29 15:10:13,188 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,188 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Ак%20Барс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,168 - app - DEBUG - Static file request: /static/images/Спартак Москва.png
+2024-12-29 15:10:13,189 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,190 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Спартак%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,182 - app - DEBUG - Static file request: /static/images/Авангард.png
+2024-12-29 15:10:13,192 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,192 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Авангард.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,189 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Нефтехимик.png
+2024-12-29 15:10:13,193 - app - DEBUG - Request Path: /static/images/Нефтехимик.png
+2024-12-29 15:10:13,193 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,194 - app - DEBUG - Static file request: /static/images/Нефтехимик.png
+2024-12-29 15:10:13,194 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,194 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Нефтехимик.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,187 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Северсталь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,168 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сибирь.png
+2024-12-29 15:10:13,195 - app - DEBUG - Request Path: /static/images/Сибирь.png
+2024-12-29 15:10:13,206 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,207 - app - DEBUG - Static file request: /static/images/Сибирь.png
+2024-12-29 15:10:13,207 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,207 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Сибирь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,191 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/ЦСКА.png
+2024-12-29 15:10:13,208 - app - DEBUG - Request Path: /static/images/ЦСКА.png
+2024-12-29 15:10:13,208 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,209 - app - DEBUG - Static file request: /static/images/ЦСКА.png
+2024-12-29 15:10:13,209 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,209 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/ЦСКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,196 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Куньлунь%20РС.png
+2024-12-29 15:10:13,209 - app - DEBUG - Request Path: /static/images/Куньлунь РС.png
+2024-12-29 15:10:13,209 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,210 - app - DEBUG - Static file request: /static/images/Куньлунь РС.png
+2024-12-29 15:10:13,210 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,211 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Куньлунь%20РС.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,212 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Минск.png
+2024-12-29 15:10:13,213 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Москва.png
+2024-12-29 15:10:13,216 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Локомотив.png
+2024-12-29 15:10:13,218 - app - DEBUG - Request Path: /static/images/Локомотив.png
+2024-12-29 15:10:13,218 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,216 - app - DEBUG - Request Path: /static/images/Динамо Минск.png
+2024-12-29 15:10:13,217 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сочи.png
+2024-12-29 15:10:13,219 - app - DEBUG - Request Path: /static/images/Сочи.png
+2024-12-29 15:10:13,219 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,219 - app - DEBUG - Static file request: /static/images/Сочи.png
+2024-12-29 15:10:13,220 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,220 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Сочи.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,218 - app - DEBUG - Request Path: /static/images/Динамо Москва.png
+2024-12-29 15:10:13,219 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,219 - app - DEBUG - Static file request: /static/images/Локомотив.png
+2024-12-29 15:10:13,222 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,222 - app - DEBUG - Static file request: /static/images/Динамо Москва.png
+2024-12-29 15:10:13,222 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,223 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Динамо%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,221 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/СКА.png
+2024-12-29 15:10:13,223 - app - DEBUG - Request Path: /static/images/СКА.png
+2024-12-29 15:10:13,224 - app - DEBUG - Static file request: /static/images/Динамо Минск.png
+2024-12-29 15:10:13,224 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,224 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Динамо%20Минск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,224 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,225 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/Локомотив.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:13,225 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:13,226 - app - DEBUG - Static file request: /static/images/СКА.png
+2024-12-29 15:10:13,226 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:13,226 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:13] "[36mGET /static/images/СКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,000 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/
+2024-12-29 15:10:14,001 - app - DEBUG - Request Path: /
+2024-12-29 15:10:14,001 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,021 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "GET / HTTP/1.1" 200 -
+2024-12-29 15:10:14,095 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Витязь.png
+2024-12-29 15:10:14,095 - app - DEBUG - Request Path: /static/images/Витязь.png
+2024-12-29 15:10:14,095 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,096 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Торпедо.png
+2024-12-29 15:10:14,097 - app - DEBUG - Static file request: /static/images/Витязь.png
+2024-12-29 15:10:14,100 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Спартак%20Москва.png
+2024-12-29 15:10:14,100 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Трактор.png
+2024-12-29 15:10:14,103 - app - DEBUG - Request Path: /static/images/Трактор.png
+2024-12-29 15:10:14,103 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,102 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Ак%20Барс.png
+2024-12-29 15:10:14,105 - app - DEBUG - Request Path: /static/images/Ак Барс.png
+2024-12-29 15:10:14,102 - app - DEBUG - Request Path: /static/images/Спартак Москва.png
+2024-12-29 15:10:14,100 - app - DEBUG - Request Path: /static/images/Торпедо.png
+2024-12-29 15:10:14,101 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Барыс.png
+2024-12-29 15:10:14,104 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Металлург%20Магнитогорск.png
+2024-12-29 15:10:14,104 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Автомобилист.png
+2024-12-29 15:10:14,102 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,105 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,106 - app - DEBUG - Static file request: /static/images/Трактор.png
+2024-12-29 15:10:14,106 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,106 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,107 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Салават%20Юлаев.png
+2024-12-29 15:10:14,107 - app - DEBUG - Request Path: /static/images/Барыс.png
+2024-12-29 15:10:14,107 - app - DEBUG - Request Path: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:10:14,108 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Авангард.png
+2024-12-29 15:10:14,109 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Северсталь.png
+2024-12-29 15:10:14,109 - app - DEBUG - Request Path: /static/images/Автомобилист.png
+2024-12-29 15:10:14,110 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Витязь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,110 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,110 - app - DEBUG - Static file request: /static/images/Ак Барс.png
+2024-12-29 15:10:14,112 - app - DEBUG - Static file request: /static/images/Спартак Москва.png
+2024-12-29 15:10:14,112 - app - DEBUG - Request Path: /static/images/Салават Юлаев.png
+2024-12-29 15:10:14,113 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Адмирал.png
+2024-12-29 15:10:14,113 - app - DEBUG - Static file request: /static/images/Торпедо.png
+2024-12-29 15:10:14,113 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,114 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Лада.png
+2024-12-29 15:10:14,115 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Нефтехимик.png
+2024-12-29 15:10:14,123 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Локомотив.png
+2024-12-29 15:10:14,115 - app - DEBUG - Request Path: /static/images/Авангард.png
+2024-12-29 15:10:14,116 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сибирь.png
+2024-12-29 15:10:14,116 - app - DEBUG - Request Path: /static/images/Северсталь.png
+2024-12-29 15:10:14,116 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,117 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/ЦСКА.png
+2024-12-29 15:10:14,118 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Трактор.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,118 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,127 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Ак%20Барс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,119 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,128 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Спартак%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,120 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Москва.png
+2024-12-29 15:10:14,128 - app - DEBUG - Request Path: /static/images/Динамо Москва.png
+2024-12-29 15:10:14,128 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,120 - app - DEBUG - Request Path: /static/images/Адмирал.png
+2024-12-29 15:10:14,129 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,129 - app - DEBUG - Static file request: /static/images/Адмирал.png
+2024-12-29 15:10:14,130 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,130 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Адмирал.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,123 - app - DEBUG - Request Path: /static/images/Лада.png
+2024-12-29 15:10:14,124 - app - DEBUG - Request Path: /static/images/Локомотив.png
+2024-12-29 15:10:14,130 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,131 - app - DEBUG - Static file request: /static/images/Лада.png
+2024-12-29 15:10:14,125 - app - DEBUG - Static file request: /static/images/Барыс.png
+2024-12-29 15:10:14,132 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,125 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,132 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,132 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Барыс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,118 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Куньлунь%20РС.png
+2024-12-29 15:10:14,119 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,133 - app - DEBUG - Static file request: /static/images/Салават Юлаев.png
+2024-12-29 15:10:14,134 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,115 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,124 - app - DEBUG - Request Path: /static/images/Нефтехимик.png
+2024-12-29 15:10:14,122 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/СКА.png
+2024-12-29 15:10:14,135 - app - DEBUG - Static file request: /static/images/Северсталь.png
+2024-12-29 15:10:14,124 - app - DEBUG - Request Path: /static/images/Сибирь.png
+2024-12-29 15:10:14,124 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,131 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,132 - app - DEBUG - Static file request: /static/images/Динамо Москва.png
+2024-12-29 15:10:14,132 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Лада.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,125 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Амур.png
+2024-12-29 15:10:14,126 - app - DEBUG - Request Path: /static/images/ЦСКА.png
+2024-12-29 15:10:14,126 - app - DEBUG - Static file request: /static/images/Автомобилист.png
+2024-12-29 15:10:14,121 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Минск.png
+2024-12-29 15:10:14,134 - app - DEBUG - Request Path: /static/images/Куньлунь РС.png
+2024-12-29 15:10:14,134 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Салават%20Юлаев.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,121 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,124 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сочи.png
+2024-12-29 15:10:14,135 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,135 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,136 - app - DEBUG - Static file request: /static/images/Нефтехимик.png
+2024-12-29 15:10:14,136 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,136 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Нефтехимик.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,137 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,137 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,137 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Динамо%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,137 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,138 - app - DEBUG - Static file request: /static/images/ЦСКА.png
+2024-12-29 15:10:14,138 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,139 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/ЦСКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,138 - app - DEBUG - Request Path: /static/images/Динамо Минск.png
+2024-12-29 15:10:14,137 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,139 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Торпедо.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,140 - app - DEBUG - Static file request: /static/images/Авангард.png
+2024-12-29 15:10:14,141 - app - DEBUG - Static file request: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:10:14,141 - app - DEBUG - Request Path: /static/images/СКА.png
+2024-12-29 15:10:14,142 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,142 - app - DEBUG - Static file request: /static/images/Сибирь.png
+2024-12-29 15:10:14,143 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,143 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Сибирь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,143 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,144 - app - DEBUG - Static file request: /static/images/СКА.png
+2024-12-29 15:10:14,145 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,145 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Автомобилист.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,145 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,146 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Авангард.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,145 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,147 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Металлург%20Магнитогорск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,148 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,148 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/СКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,148 - app - DEBUG - Request Path: /static/images/Амур.png
+2024-12-29 15:10:14,149 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Северсталь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,150 - app - DEBUG - Static file request: /static/images/Локомотив.png
+2024-12-29 15:10:14,150 - app - DEBUG - Static file request: /static/images/Куньлунь РС.png
+2024-12-29 15:10:14,150 - app - DEBUG - Request Path: /static/images/Сочи.png
+2024-12-29 15:10:14,150 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,151 - app - DEBUG - Static file request: /static/images/Динамо Минск.png
+2024-12-29 15:10:14,152 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,152 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,152 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Локомотив.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,153 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Куньлунь%20РС.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,153 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,154 - app - DEBUG - Static file request: /static/images/Амур.png
+2024-12-29 15:10:14,154 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:14,155 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Динамо%20Минск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,156 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,157 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Амур.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:14,157 - app - DEBUG - Static file request: /static/images/Сочи.png
+2024-12-29 15:10:14,158 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:14,158 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:14] "[36mGET /static/images/Сочи.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,278 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/
+2024-12-29 15:10:15,278 - app - DEBUG - Request Path: /
+2024-12-29 15:10:15,278 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,294 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "GET / HTTP/1.1" 200 -
+2024-12-29 15:10:15,369 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Витязь.png
+2024-12-29 15:10:15,369 - app - DEBUG - Request Path: /static/images/Витязь.png
+2024-12-29 15:10:15,369 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,370 - app - DEBUG - Static file request: /static/images/Витязь.png
+2024-12-29 15:10:15,370 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,370 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Витязь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,372 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Спартак%20Москва.png
+2024-12-29 15:10:15,372 - app - DEBUG - Request Path: /static/images/Спартак Москва.png
+2024-12-29 15:10:15,373 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,373 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Торпедо.png
+2024-12-29 15:10:15,374 - app - DEBUG - Request Path: /static/images/Торпедо.png
+2024-12-29 15:10:15,374 - app - DEBUG - Static file request: /static/images/Спартак Москва.png
+2024-12-29 15:10:15,374 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,374 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,375 - app - DEBUG - Static file request: /static/images/Торпедо.png
+2024-12-29 15:10:15,376 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,376 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Торпедо.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,375 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Спартак%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,378 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Амур.png
+2024-12-29 15:10:15,379 - app - DEBUG - Request Path: /static/images/Амур.png
+2024-12-29 15:10:15,379 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Барыс.png
+2024-12-29 15:10:15,380 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,380 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Ак%20Барс.png
+2024-12-29 15:10:15,381 - app - DEBUG - Request Path: /static/images/Барыс.png
+2024-12-29 15:10:15,384 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,382 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Металлург%20Магнитогорск.png
+2024-12-29 15:10:15,385 - app - DEBUG - Request Path: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:10:15,383 - app - DEBUG - Request Path: /static/images/Ак Барс.png
+2024-12-29 15:10:15,381 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Трактор.png
+2024-12-29 15:10:15,384 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Салават%20Юлаев.png
+2024-12-29 15:10:15,389 - app - DEBUG - Request Path: /static/images/Салават Юлаев.png
+2024-12-29 15:10:15,383 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Автомобилист.png
+2024-12-29 15:10:15,386 - app - DEBUG - Static file request: /static/images/Амур.png
+2024-12-29 15:10:15,390 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,390 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Амур.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,387 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,388 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Лада.png
+2024-12-29 15:10:15,388 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,388 - app - DEBUG - Request Path: /static/images/Трактор.png
+2024-12-29 15:10:15,385 - app - DEBUG - Static file request: /static/images/Барыс.png
+2024-12-29 15:10:15,389 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,390 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Адмирал.png
+2024-12-29 15:10:15,390 - app - DEBUG - Request Path: /static/images/Автомобилист.png
+2024-12-29 15:10:15,387 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Северсталь.png
+2024-12-29 15:10:15,401 - app - DEBUG - Request Path: /static/images/Северсталь.png
+2024-12-29 15:10:15,392 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сибирь.png
+2024-12-29 15:10:15,401 - app - DEBUG - Request Path: /static/images/Сибирь.png
+2024-12-29 15:10:15,393 - app - DEBUG - Static file request: /static/images/Металлург Магнитогорск.png
+2024-12-29 15:10:15,401 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,395 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/ЦСКА.png
+2024-12-29 15:10:15,402 - app - DEBUG - Request Path: /static/images/ЦСКА.png
+2024-12-29 15:10:15,396 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Минск.png
+2024-12-29 15:10:15,402 - app - DEBUG - Request Path: /static/images/Динамо Минск.png
+2024-12-29 15:10:15,402 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,397 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Динамо%20Москва.png
+2024-12-29 15:10:15,398 - app - DEBUG - Static file request: /static/images/Ак Барс.png
+2024-12-29 15:10:15,398 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,400 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Сочи.png
+2024-12-29 15:10:15,400 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/СКА.png
+2024-12-29 15:10:15,400 - app - DEBUG - Request Path: /static/images/Адмирал.png
+2024-12-29 15:10:15,401 - app - DEBUG - Static file request: /static/images/Салават Юлаев.png
+2024-12-29 15:10:15,401 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,401 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,387 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Авангард.png
+2024-12-29 15:10:15,393 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Нефтехимик.png
+2024-12-29 15:10:15,401 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,402 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Металлург%20Магнитогорск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,394 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Куньлунь%20РС.png
+2024-12-29 15:10:15,402 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,395 - app - DEBUG - Request Path: /static/images/Лада.png
+2024-12-29 15:10:15,398 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Локомотив.png
+2024-12-29 15:10:15,398 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,404 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,403 - app - DEBUG - Static file request: /static/images/Динамо Минск.png
+2024-12-29 15:10:15,403 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,403 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Барыс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,404 - app - DEBUG - Request Path: /static/images/Сочи.png
+2024-12-29 15:10:15,404 - app - DEBUG - Request Path: /static/images/СКА.png
+2024-12-29 15:10:15,402 - app - DEBUG - Request Path: /static/images/Динамо Москва.png
+2024-12-29 15:10:15,404 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,405 - app - DEBUG - Request Path: /static/images/Авангард.png
+2024-12-29 15:10:15,405 - app - DEBUG - Request Path: /static/images/Нефтехимик.png
+2024-12-29 15:10:15,405 - app - DEBUG - Static file request: /static/images/Северсталь.png
+2024-12-29 15:10:15,407 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,406 - app - DEBUG - Static file request: /static/images/Автомобилист.png
+2024-12-29 15:10:15,407 - app - DEBUG - Static file request: /static/images/ЦСКА.png
+2024-12-29 15:10:15,407 - app - DEBUG - Static file request: /static/images/Сибирь.png
+2024-12-29 15:10:15,406 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,406 - app - DEBUG - Request Path: /static/images/Куньлунь РС.png
+2024-12-29 15:10:15,408 - app - DEBUG - Static file request: /static/images/Лада.png
+2024-12-29 15:10:15,409 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,409 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Ак%20Барс.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,410 - app - DEBUG - Static file request: /static/images/Адмирал.png
+2024-12-29 15:10:15,410 - app - DEBUG - Static file request: /static/images/Трактор.png
+2024-12-29 15:10:15,410 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,411 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Салават%20Юлаев.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,411 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,411 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,412 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,412 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Северсталь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,412 - app - DEBUG - Request Path: /static/images/Локомотив.png
+2024-12-29 15:10:15,412 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,412 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,414 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,414 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Динамо%20Минск.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,414 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,415 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,413 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,414 - app - DEBUG - Static file request: /static/images/Динамо Москва.png
+2024-12-29 15:10:15,413 - app - DEBUG - Static file request: /static/images/Сочи.png
+2024-12-29 15:10:15,416 - app - DEBUG - Static file request: /static/images/СКА.png
+2024-12-29 15:10:15,416 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,416 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/СКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,417 - app - DEBUG - Static file request: /static/images/Нефтехимик.png
+2024-12-29 15:10:15,418 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/ЦСКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,420 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Лада.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,421 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,421 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Адмирал.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,423 - app - DEBUG - Static file request: /static/images/Куньлунь РС.png
+2024-12-29 15:10:15,423 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,423 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,423 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,424 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Автомобилист.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,424 - app - DEBUG - Static file request: /static/images/Авангард.png
+2024-12-29 15:10:15,424 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,425 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Сибирь.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,426 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Нефтехимик.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,426 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,427 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Куньлунь%20РС.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,427 - app - DEBUG - Request Method: GET
+2024-12-29 15:10:15,428 - app - DEBUG - Static file request: /static/images/Локомотив.png
+2024-12-29 15:10:15,428 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Трактор.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,429 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Сочи.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,430 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Динамо%20Москва.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,430 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,432 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Авангард.png HTTP/1.1[0m" 304 -
+2024-12-29 15:10:15,430 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:10:15,433 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:10:15] "[36mGET /static/images/Локомотив.png HTTP/1.1[0m" 304 -
+2024-12-29 15:11:40,234 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/compare-page
+2024-12-29 15:11:40,234 - app - DEBUG - Request Path: /compare-page
+2024-12-29 15:11:40,234 - app - DEBUG - Request Method: GET
+2024-12-29 15:11:40,244 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:11:40] "GET /compare-page HTTP/1.1" 200 -
+2024-12-29 15:11:43,220 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/compare?team1=Адмирал&team2=Нефтехимик
+2024-12-29 15:11:43,220 - app - DEBUG - Request Path: /compare
+2024-12-29 15:11:43,220 - app - DEBUG - Request Method: GET
+2024-12-29 15:11:43,231 - app - ERROR - Exception on /compare [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app.py", line 243, in compare_teams
+    "avg_goals": round(head_to_head_stats[2], 2)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: type NoneType doesn't define __round__ method
+2024-12-29 15:11:43,234 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:11:43] "[35m[1mGET /compare?team1=Адмирал&team2=Нефтехимик HTTP/1.1[0m" 500 -
+2024-12-29 15:11:45,192 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/compare?team1=Адмирал&team2=СКА
+2024-12-29 15:11:45,192 - app - DEBUG - Request Path: /compare
+2024-12-29 15:11:45,192 - app - DEBUG - Request Method: GET
+2024-12-29 15:11:45,204 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:11:45] "GET /compare?team1=Адмирал&team2=СКА HTTP/1.1" 200 -
+2024-12-29 15:11:45,226 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/team-trends?team=Адмирал
+2024-12-29 15:11:45,226 - app - DEBUG - Request Path: /team-trends
+2024-12-29 15:11:45,227 - app - DEBUG - Request Method: GET
+2024-12-29 15:11:45,228 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/team-trends?team=СКА
+2024-12-29 15:11:45,228 - app - DEBUG - Request Path: /team-trends
+2024-12-29 15:11:45,229 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/Адмирал.png
+2024-12-29 15:11:45,229 - app - DEBUG - Request Method: GET
+2024-12-29 15:11:45,230 - app - DEBUG - Request URL: https://ludka.d3viltech.ru/static/images/СКА.png
+2024-12-29 15:11:45,230 - app - DEBUG - Request Path: /static/images/СКА.png
+2024-12-29 15:11:45,230 - app - DEBUG - Request Method: GET
+2024-12-29 15:11:45,231 - app - DEBUG - Static file request: /static/images/СКА.png
+2024-12-29 15:11:45,231 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:11:45,231 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:11:45] "[36mGET /static/images/СКА.png HTTP/1.1[0m" 304 -
+2024-12-29 15:11:45,230 - app - DEBUG - Request Path: /static/images/Адмирал.png
+2024-12-29 15:11:45,232 - app - DEBUG - Request Method: GET
+2024-12-29 15:11:45,233 - app - DEBUG - Static file request: /static/images/Адмирал.png
+2024-12-29 15:11:45,233 - app - DEBUG - Response status: 304 NOT MODIFIED
+2024-12-29 15:11:45,233 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:11:45] "[36mGET /static/images/Адмирал.png HTTP/1.1[0m" 304 -
+2024-12-29 15:11:45,236 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:11:45] "GET /team-trends?team=Адмирал HTTP/1.1" 200 -
+2024-12-29 15:11:45,240 - werkzeug - INFO - 192.168.89.15 - - [29/Dec/2024 15:11:45] "GET /team-trends?team=СКА HTTP/1.1" 200 -
