@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 import psycopg2
+from werkzeug.middleware.proxy_fix import ProxyFix
+
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
 
 def connect_to_db():
     try:
@@ -103,7 +106,6 @@ def compare_teams():
     cursor.execute("""
         SELECT 
             SUM(CASE WHEN (home_team = %s AND home_score > away_score) OR (away_team = %s AND away_score > home_score) THEN 1 ELSE 0 END) AS wins,
-            SUM(CASE WHEN (home_team = %s AND home_score = away_score) OR (away_team = %s AND away_score = home_score) THEN 1 ELSE 0 END) AS draws,
             SUM(CASE WHEN (home_team = %s AND home_score < away_score) OR (away_team = %s AND away_score < home_score) THEN 1 ELSE 0 END) AS losses,
             COUNT(*) AS total_matches,
             AVG(home_score) FILTER (WHERE home_team = %s) + AVG(away_score) FILTER (WHERE away_team = %s) AS avg_goals,
@@ -111,13 +113,12 @@ def compare_teams():
             SUM(CASE WHEN (away_team = %s AND away_score > home_score) THEN 1 ELSE 0 END) AS away_wins
         FROM games
         WHERE (home_team = %s OR away_team = %s)
-    """, (team1, team1, team1, team1, team1, team1, team1, team1, team1, team1, team1, team1))
+    """, (team1, team1, team1, team1, team1, team1, team1, team1, team1, team1))
     team1_stats = cursor.fetchone()
 
     cursor.execute("""
         SELECT 
             SUM(CASE WHEN (home_team = %s AND home_score > away_score) OR (away_team = %s AND away_score > home_score) THEN 1 ELSE 0 END) AS wins,
-            SUM(CASE WHEN (home_team = %s AND home_score = away_score) OR (away_team = %s AND away_score = home_score) THEN 1 ELSE 0 END) AS draws,
             SUM(CASE WHEN (home_team = %s AND home_score < away_score) OR (away_team = %s AND away_score < home_score) THEN 1 ELSE 0 END) AS losses,
             COUNT(*) AS total_matches,
             AVG(home_score) FILTER (WHERE home_team = %s) + AVG(away_score) FILTER (WHERE away_team = %s) AS avg_goals,
@@ -125,7 +126,7 @@ def compare_teams():
             SUM(CASE WHEN (away_team = %s AND away_score > home_score) THEN 1 ELSE 0 END) AS away_wins
         FROM games
         WHERE (home_team = %s OR away_team = %s)
-    """, (team2, team2, team2, team2, team2, team2, team2, team2, team2, team2, team2, team2))
+    """, (team2, team2, team2, team2, team2, team2, team2, team2, team2, team2))
     team2_stats = cursor.fetchone()
 
     # Статистика встреч между командами
@@ -143,11 +144,30 @@ def compare_teams():
 
     conn.close()
 
+    # Функция для расчета серии побед
+    def calculate_win_streak(matches, team):
+        streak = 0
+        for match in matches:
+            home_team = match[1]
+            away_team = match[2]
+            home_score = match[3]
+            away_score = match[4]
+            if (home_team == team and home_score > away_score) or (away_team == team and away_score > home_score):
+                streak += 1
+            else:
+                break
+        return streak
+
+    # Серия побед для каждой команды
+    team1_streak = calculate_win_streak(team1_matches, team1)
+    team2_streak = calculate_win_streak(team2_matches, team2)
+
     # Форматируем данные для JSON
     def format_matches(matches):
         return [{
             "date": match[0].strftime('%Y-%m-%d %H:%M'),
-            "opponent": match[2] if match[1] == team1 else match[1],
+            "home_team": match[1],
+            "away_team": match[2],
             "score": f"{match[3]} : {match[4]}",
             "match_type": match[5]
         } for match in matches]
@@ -158,25 +178,25 @@ def compare_teams():
         "head_to_head_matches": format_matches(head_to_head_matches),
         "team1_stats": {
             "wins": team1_stats[0],
-            "draws": team1_stats[1],
-            "losses": team1_stats[2],
-            "total_matches": team1_stats[3],
-            "avg_goals": round(team1_stats[4], 2),
-            "home_wins": team1_stats[5],
-            "away_wins": team1_stats[6],
-            "home_win_percentage": round((team1_stats[5] / team1_stats[3]) * 100, 2) if team1_stats[3] > 0 else 0,
-            "away_win_percentage": round((team1_stats[6] / team1_stats[3]) * 100, 2) if team1_stats[3] > 0 else 0
+            "losses": team1_stats[1],
+            "total_matches": team1_stats[2],
+            "avg_goals": round(team1_stats[3], 2),
+            "home_wins": team1_stats[4],
+            "away_wins": team1_stats[5],
+            "home_win_percentage": round((team1_stats[4] / team1_stats[2]) * 100, 2) if team1_stats[2] > 0 else 0,
+            "away_win_percentage": round((team1_stats[5] / team1_stats[2]) * 100, 2) if team1_stats[2] > 0 else 0,
+            "win_streak": team1_streak
         },
         "team2_stats": {
             "wins": team2_stats[0],
-            "draws": team2_stats[1],
-            "losses": team2_stats[2],
-            "total_matches": team2_stats[3],
-            "avg_goals": round(team2_stats[4], 2),
-            "home_wins": team2_stats[5],
-            "away_wins": team2_stats[6],
-            "home_win_percentage": round((team2_stats[5] / team2_stats[3]) * 100, 2) if team2_stats[3] > 0 else 0,
-            "away_win_percentage": round((team2_stats[6] / team2_stats[3]) * 100, 2) if team2_stats[3] > 0 else 0
+            "losses": team2_stats[1],
+            "total_matches": team2_stats[2],
+            "avg_goals": round(team2_stats[3], 2),
+            "home_wins": team2_stats[4],
+            "away_wins": team2_stats[5],
+            "home_win_percentage": round((team2_stats[4] / team2_stats[2]) * 100, 2) if team2_stats[2] > 0 else 0,
+            "away_win_percentage": round((team2_stats[5] / team2_stats[2]) * 100, 2) if team2_stats[2] > 0 else 0,
+            "win_streak": team2_streak
         },
         "head_to_head_stats": {
             "team1_wins": head_to_head_stats[0],
@@ -184,6 +204,7 @@ def compare_teams():
             "avg_goals": round(head_to_head_stats[2], 2)
         }
     })
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

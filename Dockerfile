@@ -25,8 +25,14 @@ COPY templates /app/templates
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Настройка cron для запуска парсера
-RUN echo "0 3 * * * python3.12 /app/scripts/parser.py >> /var/log/cron.log 2>&1" >> /etc/crontab
+# Настройка cron для запуска парсера каждый час
+RUN echo "0 * * * * root python3.12 /app/scripts/parser.py >> /var/log/cron.log 2>&1" > /etc/cron.d/parser-cron
+
+# Даем права на выполнение cron-файла
+RUN chmod 0644 /etc/cron.d/parser-cron
+
+# Создаем лог-файл для cron
+RUN touch /var/log/cron.log
 
 # Запуск cron и Flask-приложения
 CMD cron && flask run --host=0.0.0.0 --port=5000
