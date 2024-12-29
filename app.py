@@ -28,7 +28,7 @@ def index():
     cursor = conn.cursor()
 
     # Получаем все матчи
-    cursor.execute("SELECT * FROM games ORDER BY date_time DESC limit 24")
+    cursor.execute("SELECT * FROM games ORDER BY date_time DESC limit 22")
     matches = cursor.fetchall()
 
     # Получаем список всех команд
