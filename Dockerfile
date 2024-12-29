@@ -27,7 +27,7 @@ WORKDIR /app
 
 # Настройка cron для запуска парсеров
 RUN echo "0 * * * * root /usr/local/bin/python3.12 /app/scripts/parser.py >> /var/log/cron.log 2>&1" > /etc/cron.d/parser-cron
-RUN echo "0 0 * * * root /usr/local/bin/python3.12 /app/scripts/flashscore_table.py >> /var/log/cron.log 2>&1" > /etc/cron.d/parser-cron
+RUN echo "0 0 * * * root /usr/local/bin/python3.12 /app/scripts/flashscore_table.py >> /var/log/cron.log 2>&1" >> /etc/cron.d/parser-cron
 # Даем права на выполнение cron-файла
 RUN chmod 0644 /etc/cron.d/parser-cron
 
@@ -38,5 +38,8 @@ RUN touch /var/log/cron.log && chmod 666 /var/log/cron.log
 RUN chmod +x /app/scripts/parser.py
 RUN chmod +x /app/scripts/flashscore_table.py
 
+# Копируем переменные окружения в cron
+RUN printenv | grep -v "no_proxy" >> /etc/environment
+
 # Запуск cron и Flask-приложения
-CMD cron && flask run --host=0.0.0.0 --port=5000
+CMD cron && tail -f /var/log/cron.log & flask run --host=0.0.0.0 --port=5000
