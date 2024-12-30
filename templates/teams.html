@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="teams-container">
+    <h1 class="teams-title">Команды</h1>
+    <div class="teams-grid">
+        {% for team in teams %}
+        <a href="{{ url_for('team', team_name=team) }}" class="team-card">
+            <div class="team-logo">
+                <img src="{{ url_for('static', filename='images/' + team + '.png') }}" alt="{{ team }}">
+            </div>
+            <div class="team-name">{{ team }}</div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

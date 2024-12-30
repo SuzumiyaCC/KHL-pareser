@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="team-container">
+    <h1 class="team-title">{{ team_name }}</h1>
+
+    {% for position, players in players_by_position %}
+    <div class="position-section">
+        <h2 class="position-title">{{ position }}</h2>
+        <table class="players-table">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Возраст</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players %}
+                <tr>
+                    <td>{{ player.name }}</td>
+                    <td>{{ player.age }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

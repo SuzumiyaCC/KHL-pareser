@@ -282,5 +282,50 @@ def team_trends():
 
     return jsonify(format_matches(matches))
 
+@app.route('/teams')
+def teams():
+    conn = connect_to_db()
+    if not conn:
+        return "Ошибка подключения к базе данных", 500
+
+    cursor = conn.cursor()
+
+    # Получаем список всех команд
+    cursor.execute("SELECT DISTINCT team FROM Players")
+    teams = [row[0] for row in cursor.fetchall()]
+
+    # Закрываем соединение с базой данных
+    cursor.close()
+    conn.close()
+
+    # Передаем данные в шаблон
+    return render_template('teams.html', teams=teams)
+
+
+@app.route('/team/<team_name>')
+def team(team_name):
+    conn = connect_to_db()
+    if not conn:
+        return "Ошибка подключения к базе данных", 500
+
+    cursor = conn.cursor()
+
+    # Получаем игроков команды, сгруппированных по позициям
+    cursor.execute("""
+        SELECT position, ARRAY_AGG(JSON_BUILD_OBJECT('name', name, 'age', age)) AS players
+        FROM Players
+        WHERE team = %s
+        GROUP BY position
+    """, (team_name,))
+    players_by_position = cursor.fetchall()
+
+    # Закрываем соединение с базой данных
+    cursor.close()
+    conn.close()
+
+    # Передаем данные в шаблон
+    return render_template('team.html', team_name=team_name, players_by_position=players_by_position)
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

@@ -86,6 +86,114 @@
         .animate__animated {
             --animate-duration: 1s;
         }
+        /* Общие стили для контейнера */
+        .teams-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .teams-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #ffffff; /* Белый текст */
+        }
+
+        /* Сетка карточек команд */
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Стили для карточки команды */
+        .team-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            background-color: #1e1e1e; /* Темно-серый */
+            border: 1px solid #333333; /* Серый */
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-logo img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .team-name {
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff; /* Белый текст */
+            text-align: center;
+        }
+
+
+        /* Общие стили для контейнера */
+        .team-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ffffff; /* Белый текст */
+        }
+
+        /* Стили для секции с позициями */
+        .position-section {
+            margin-bottom: 20px;
+        }
+
+        .position-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ffffff; /* Белый текст */
+            border-bottom: 2px solid #0d47a1; /* Темно-синий */
+            padding-bottom: 5px;
+        }
+
+        /* Стили для таблицы игроков */
+        .players-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #1e1e1e; /* Темно-серый */
+            color: #ffffff; /* Белый текст */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .players-table th, .players-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #333333; /* Серый */
+        }
+
+        .players-table th {
+            background-color: #0d47a1; /* Темно-синий */
+            font-weight: bold;
+        }
+
+        .players-table tbody tr:hover {
+            background-color: #333333; /* Серый */
+        }
     </style>
     {% block extra_css %}{% endblock %}
 </head>
@@ -94,7 +202,7 @@
         <!-- Навигация -->
         <nav class="navbar navbar-expand-lg navbar-dark animate__animated animate__fadeInDown">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">Лудка</a>
+                <a class="navbar-brand" href="/">лЮдка</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -115,7 +223,7 @@
         {% block content %}{% endblock %}
     </main>
     <footer class="footer text-center mt-4 p-3 animate__animated animate__fadeInUp">
-        <p class="mb-0">&copy; Лудка сетевого шизика 2024</p>
+        <p class="mb-0">&copy; лЮдка 2024</p>
     </footer>
     <!-- Подключаем Bootstrap JS и зависимости -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

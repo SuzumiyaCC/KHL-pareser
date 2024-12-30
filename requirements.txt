@@ -3,3 +3,6 @@ psycopg2-binary
 webdriver-manager
 bs4
 Flask
+pandas
+lxml
+html5lib

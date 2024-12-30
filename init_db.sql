@@ -13,11 +13,24 @@ CREATE TABLE match_types (
     type VARCHAR(50) NOT NULL
 );
 
+
 -- Предоставляем права на таблицу пользователю khl_user
 GRANT ALL PRIVILEGES ON TABLE match_types TO khl_user;
 -- Предоставляем права на последовательность
 GRANT ALL PRIVILEGES ON SEQUENCE match_types_id_seq TO khl_user;
 
+CREATE TABLE players (
+    id SERIAL PRIMARY KEY,  -- Уникальный идентификатор игрока
+    name VARCHAR(100) NOT NULL,         -- Имя игрока
+    team VARCHAR(100) NOT NULL,         -- Команда
+    position VARCHAR(50) NOT NULL,      -- Позиция
+    age INT NOT NULL                    -- Возраст
+);
+
+-- Предоставляем права на таблицу пользователю khl_user
+GRANT ALL PRIVILEGES ON TABLE players TO khl_user;
+-- Предоставляем права на последовательность
+GRANT ALL PRIVILEGES ON SEQUENCE players_id_seq TO khl_user;
 
 CREATE TABLE summary_score (
     id SERIAL PRIMARY KEY,
